@@ -5,6 +5,15 @@
     box-sizing: border-box;
 }
 
+/* Push footer down 
+With help from: https://dev.to/nehalahmadkhan/how-to-make-footer-stick-to-bottom-of-web-page-3i14 */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* General styles */
+}
+
 header {
     background-color: #fa00a6;
     color: #f9f871;
@@ -13,9 +22,13 @@ header {
 main {
     background-color: #cfd80d;
     color: #015d45;
+    /* Main content to take up all space between header and footer 
+    Credit: Code Institute Video "Setting up some basic CSS styles" */
+    flex: 1 0 auto;
 }
 
 footer {
     background-color: #ffd150;
     color: #00d0ff;
+    /*margin-top: auto;*/
 }
