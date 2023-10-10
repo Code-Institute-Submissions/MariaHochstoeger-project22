@@ -1,11 +1,21 @@
+/* Wildcard selector to override default styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 header {
-    background-color: lightblue;
+    background-color: #fa00a6;
+    color: #f9f871;
 }
 
 main {
-    background-color: aquamarine;
+    background-color: #cfd80d;
+    color: #015d45;
 }
 
 footer {
-    background-color: lightcoral;
+    background-color: #ffd150;
+    color: #00d0ff;
 }
