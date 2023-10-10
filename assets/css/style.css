@@ -41,4 +41,11 @@ footer {
     background-color: #ffd150;
     color: #00d0ff;
     font-family: 'Laila', sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+
+footer i {
+    color:#00d0ff;
+    font-size: 150%;
 }
