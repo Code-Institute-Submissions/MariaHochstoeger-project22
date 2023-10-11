@@ -34,6 +34,7 @@ header {
 }
 
 main {
+    margin-top: 122px;
     background-color: #cfd80d;
     color: #015d45;
     /* Main content to take up all space between header and footer 
@@ -57,10 +58,24 @@ footer i {
 
 /* Make site responsive by using media queries */
 
+/* Very small screens with 298px width and smaller */
+@media only screen and (max-width: 298px) {
+    main {
+        margin-top: 163px;
+    }
+}
+
 /* Small screens with 425px width and smaller */
 @media only screen and (max-width: 425px) {
     header {
-        font-size: smaller;
+        font-size: small;
+    }
+}
+
+/* Tablets with 768px width and wider */
+@media only screen and (min-width: 768px) {
+    main {
+        margin-top: 96px;
     }
 }
 
@@ -68,6 +83,10 @@ footer i {
 @media only screen and (min-width: 1024px) {
     header {
         font-size: x-large;
+    }
+
+    main {
+        margin-top: 115px;
     }
 
     footer {
