@@ -46,7 +46,7 @@ main {
     /* Main content to take up all space between header and footer 
     Credit: Code Institute Video "Setting up some basic CSS styles" */
     flex: 1 0 auto;
-    justify-content: baseline;
+    justify-content: center;
     align-items: center;
 }
 
@@ -64,12 +64,17 @@ main {
     /*border: solid red;*/
 }
 
+#heading h1 {
+    color: #fa00a6;
+    margin: 20px;
+    font-family: 'Laila', sans-serif;
+}
+
 #user-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 }
 
 #user-div {
@@ -112,6 +117,7 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
     /*border: solid 2px #015d45;*/
     color: #015d45;
     font-size: large;
+    font-weight: bold;
     background-color: #00d0ff;
     border: none;
 }
