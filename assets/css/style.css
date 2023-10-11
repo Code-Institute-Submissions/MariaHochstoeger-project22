@@ -27,7 +27,7 @@ header {
     font-family: 'Laila', sans-serif;
     text-transform: uppercase;
     font-weight: 800;
-    font-size: xx-large;
+    font-size: large;
     text-align: center;
     padding: 20px;
     box-shadow: 0 2px 2px #ffd150;
@@ -57,17 +57,17 @@ footer i {
 
 /* Make site responsive by using media queries */
 
-/* Small screens with 320px width and smaller */
-@media only screen and (max-width: 320px) {
+/* Small screens with 425px width and smaller */
+@media only screen and (max-width: 425px) {
     header {
-        font-size: x-large;
+        font-size: smaller;
     }
 }
 
 /* Large screens with 1024px width and larger */
 @media only screen and (min-width: 1024px) {
     header {
-        font-size: xxx-large;
+        font-size: x-large;
     }
 
     footer {
