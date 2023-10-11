@@ -72,8 +72,8 @@ footer i {
     }
 }
 
-/* Tablets with 768px width and wider */
-@media only screen and (min-width: 768px) {
+/* Phones in landscape mode or tablets with 736px width and wider */
+@media only screen and (min-width: 736px) {
     main {
         margin-top: 96px;
     }
