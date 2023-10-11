@@ -20,7 +20,7 @@ body {
 
 header {
     background-color: #fa00a6;
-    color: #f9f871;
+    color: #ffd150;
     font-family: 'Laila', sans-serif;
     text-transform: uppercase;
     font-weight: bold;
@@ -38,19 +38,22 @@ main {
 }
 
 footer {
-    background-color: #ffd150;
-    color: #00d0ff;
+    /*background-color: #ffd150;*/
+    background-color: #00d0ff;
+    color: #f9f871;
     font-family: 'Laila', sans-serif;
     text-align: center;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 footer i {
-    color:#00d0ff;
+    color:#f9f871;
     font-size: 170%;
 }
 
 /* Make site responsive by using media queries */
+
+/* Large screens with 1024px width and larger */
 @media only screen and (min-width: 1024px) {
     header {
         font-size: xxx-large;
