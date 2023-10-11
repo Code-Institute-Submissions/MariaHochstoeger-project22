@@ -18,6 +18,8 @@ body {
     font-family: 'Yantramanav', sans-serif;
 }
 
+/* Header */
+
 header {
     background-color: #fa00a6;
     color: #ffd150;
@@ -33,6 +35,8 @@ header {
     box-shadow: 0 3px 2px #ffd150;
 }
 
+/* Main */
+
 main {
     margin-top: 122px;
     background-color: #cfd80d;
@@ -42,7 +46,7 @@ main {
     /* Main content to take up all space between header and footer 
     Credit: Code Institute Video "Setting up some basic CSS styles" */
     flex: 1 0 auto;
-    justify-content: center;
+    justify-content: baseline;
     align-items: center;
 }
 
@@ -61,7 +65,11 @@ main {
 }
 
 #user-section {
-    /*border: solid green;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 #user-div {
@@ -85,6 +93,7 @@ main {
     background-color: #f9f871;
     color:#015d45;
     font-size: large;
+    margin-top: 1rem;
 }
 
 /* Change placeholder color and opacity 
@@ -95,6 +104,19 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
     font-size: large;
     text-align: center;
 }
+
+#submit-button {
+    width: 7rem;
+    min-height: 2rem;
+    border-radius: 5px;
+    /*border: solid 2px #015d45;*/
+    color: #015d45;
+    font-size: large;
+    background-color: #00d0ff;
+    border: none;
+}
+
+/* Footer */
 
 footer {
     background-color: #00d0ff;
