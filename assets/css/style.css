@@ -23,8 +23,8 @@ header {
     color: #ffd150;
     font-family: 'Laila', sans-serif;
     text-transform: uppercase;
-    font-weight: bold;
-    font-size: x-large;
+    font-weight: 800;
+    font-size: xx-large;
     text-align: center;
     padding: 20px;
 }
@@ -52,6 +52,13 @@ footer i {
 }
 
 /* Make site responsive by using media queries */
+
+/* Small screens with 320px width and smaller */
+@media only screen and (max-width: 320px) {
+    header {
+        font-size: x-large;
+    }
+}
 
 /* Large screens with 1024px width and larger */
 @media only screen and (min-width: 1024px) {
