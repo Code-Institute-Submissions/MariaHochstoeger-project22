@@ -152,7 +152,7 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
 }
 
 /* Close Button X */
-#close {
+#close-modal {
     float: right;
     font-size: 1em;
     font-weight: bold;
@@ -161,8 +161,8 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
     background-color: #ffd150;
 }
 
-/*#close:hover,
-#close:focus {
+/*#close-modal:hover,
+#close-modal:focus {
     background-color: #015d45;
     color: #ffd150;
 }*/
