@@ -32,7 +32,7 @@
                     <label for="input-name" id="input-name-label">Enter your name:</label>
                     <input type="text" id="input-name" name="name" placeholder="Type your name" required>
                 </div>
-                <button type="button" id="submit-button" class="button">Submit</button>
+                <button type="button" id="submit-button" class="button">Let's start!</button>
             </section>
             <div id="rules">
                 <button type="button" id="rules-button" class="button">How to play</button>
@@ -40,8 +40,18 @@
         </div>
         <div id="rules-modal">
             <div id="modal-content">
-                <span class="close">X</span>
-                <p>Text</p>
+                <span id="close">X</span>
+                <h3>How to play</h3>
+                <ul>
+                    <li>Upon clicking "Let's start!" the game begins and you will see the first question.</li>
+                    <li>You have 30 seconds to answer each question.</li>
+                    <li>Select your answer within these 30 seconds.</li>
+                    <li>Upon choosing your answer, you will receive feedback whether your answer is correct or not.</li>
+                    <li>Click "Next" to get to the next question.</li>
+                    <li>If you did not choose an answer within 30 seconds you will automatically jump to the next question. The unanswered question will be marked as incorrect.</li>
+                    <li>After all questions have been answered, or time has expired, you will see your score.</li>
+                    <li>If you wish to play again, you can do so by clicking "Play again".</li>
+                </ul>
             </div>
         </div>
     </main>
