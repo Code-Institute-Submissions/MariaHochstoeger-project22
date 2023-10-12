@@ -229,4 +229,8 @@ footer i {
     #container {
         font-size: x-large;
     }
+
+    #modal-content {
+        font-size: larger;
+    }
 }
