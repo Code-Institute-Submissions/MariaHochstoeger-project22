@@ -168,6 +168,7 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
     border: solid 1px #015d45;
     padding: 0.1em 0.4em;
     background-color: #ffd150;
+    cursor: grab;
 }
 
 /*#close-modal:hover,
