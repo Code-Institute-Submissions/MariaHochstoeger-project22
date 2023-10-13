@@ -114,12 +114,20 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
     min-width: 8rem;
     min-height: 2rem;
     border-radius: 5px;
-    /*border: solid 2px #015d45;*/
     color: #015d45;
     font-size: large;
-    font-weight: bold;
+    font-weight: bolder;
     background-color: #00d0ff;
     border: none;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button:hover {
+    color: #fa00a6;
 }
 
 #rules {
