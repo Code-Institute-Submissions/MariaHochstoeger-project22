@@ -196,6 +196,18 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
 .possible-answers {
     border: solid 0.1em #015d45;
     width: 90vw;
+    margin: 0.5em;
+    padding: 0.2em 0.4em;
+}
+
+.possible-answers:hover {
+    font-weight: bold;
+    background-color: #f9f871;
+    cursor: grab;
+}
+
+#countdown {
+    margin-top: 1em;
 }
 
 /* Footer */
@@ -233,6 +245,10 @@ footer i {
 @media only screen and (min-width: 736px) {
     main {
         margin-top: 96px;
+    }
+
+    .possible-answers {
+        width: 80vw;
     }
 }
 
