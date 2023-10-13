@@ -124,6 +124,7 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor:grab; /* To make cursor look the same whether it hovers over link or button: https://developer.mozilla.org/en-US/docs/Web/CSS/cursor?retiredLocale=de */
 }
 
 .button:hover {
