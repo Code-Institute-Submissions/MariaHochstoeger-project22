@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 // Add event listener to Start Button
+// Inspiration from: https://github.com/raccodes09/ci-pp2-project/blob/main/assets/js/script.js
 startButton.addEventListener("click", validateUsernameAndStart);
 
 // Validate that username is not blank and redirect to game page 
@@ -42,14 +43,27 @@ function validateUsernameAndStart() {
     }
 }
 
+
+
+let availableTime = 30;
+let countdownField = document.getElementById("countdown");
+let timer = setInterval(startCountdown, 1000);
+
+function startCountdown() {
+    if (availableTime === 0) {
+        clearInterval(timer);
+    } else {
+        countdownField.innerHTML = availableTime + " seconds left";
+        availableTime--;
+    }
+}
+
+startCountdown();
+
 function runGame() {
 
 }
 
 function feedbackAnswer() {
-
-}
-
-function startCountdown() {
 
 }
