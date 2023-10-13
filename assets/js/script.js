@@ -31,23 +31,32 @@ window.onclick = function(event) {
 
 // Remove white spaces and validate username
 
-let usernameField = document.getElementById("input-name");
-let startButton = document.getElementById("lets-start");
+const usernameField = document.getElementById("input-name");
+const startButton = document.getElementById("lets-start");
 
 /* Disable the Start button 
  credit: https://www.altcademy.com/blog/how-to-disable-a-button-in-javascript/ */
 
-startButton.disabled = true;
+/*startButton.disabled = true;*/
 
-// Add event listener for input event
+// Add event listener to Start Button
+startButton.addEventListener("click", validateUsernameAndStart);
 
-function validateAndSubmit () {
-    if (usernameField.value.trim() === "") {
-        alert("Please fill out the player name");
+function validateUsernameAndStart() {
+    // for trim: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim?retiredLocale=de
+    if (usernameField.value.trim() != "") {
+        window.location.href = "game.html";
     } else {
-        startButton.disabled = false;
+        alert("Please fill in a name!");
     }
 }
+
+// Function to validate username and enable submit button
+
+
+
+
+
 
 /* Let username = document.getElementById("input-name").value;*/
 
