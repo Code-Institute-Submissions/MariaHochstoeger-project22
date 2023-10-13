@@ -57,6 +57,10 @@ main {
     width: 90vw;
     padding: 5px;
     margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #heading {
@@ -176,6 +180,23 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
     background-color: #015d45;
     color: #ffd150;
 }*/
+
+/* Game.html page */
+#question {
+    
+    color:#fa00a6;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 0.2em;
+    margin: 0.2em;
+    font-weight: bold;
+    /*background-color: #f9f871;*/
+}
+
+.possible-answers {
+    border: solid 0.1em #015d45;
+    width: 90vw;
+}
 
 /* Footer */
 
