@@ -29,8 +29,23 @@ window.onclick = function(event) {
     }
 }
 
+// Remove white spaces and validate username
+
+let usernameField = document.getElementById("lets-start");
+let username = document.getElementById("input-name").value;
+
+usernameField.onclick = function() {
+    if (username.trim == "") {
+        alert("Please fill out the player name");
+    } else {
+        window.location.href = "game.html";
+    }
+}
 
 function validateUsername() {
+    
+    let validatedUsername = username.trim;
+
 
 }
 
