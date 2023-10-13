@@ -52,7 +52,7 @@ main {
 
 /* Home page */
 
-#container {
+.container {
     /*border:2px solid #015d45;*/
     width: 90vw;
     padding: 5px;
@@ -225,7 +225,7 @@ footer i {
         margin-top: 115px;
     }
 
-    #container {
+    .container {
         font-size: larger;
     }
 
@@ -236,7 +236,7 @@ footer i {
 
 /* Large screens with 1440px width and larger */
 @media only screen and (min-width: 1440px) {
-    #container {
+    .container {
         font-size: x-large;
     }
 
