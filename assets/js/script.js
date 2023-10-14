@@ -43,8 +43,32 @@ function validateUsernameAndStart() {
     }
 }
 
+// Question objects
+
+let questions = [
+    { 
+        question: "What is the Haldi ceremony?",
+        alternatives: ["Kurkuma", "Garlic", "Rose", "Cumin"],
+        correctAnswer: "Kurkuma", //need this comma?
+    },
+    {
+        question: "What is the Baraat ceremony?",
+        alternatives: ["Goat", "Sheep", "Horse", "Cow"],
+        correctAnswer: "Horse",
+    },
+    {
+        question: "What is the Mehndi ceremony?",
+        alternatives: ["Drink", "Dance", "Sing", "Henna"],
+        correctAnswer: "Henna",
+    }
+];
 
 
+/* Countdown function
+/ Does not work yet
+*/ 
+
+/*
 let availableTime = 30;
 let countdownField = document.getElementById("countdown");
 let timer = setInterval(startCountdown, 1000);
@@ -57,6 +81,7 @@ function startCountdown() {
         availableTime--;
     }
 }
+*/
 
 startCountdown();
 
