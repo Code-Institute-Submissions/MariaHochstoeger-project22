@@ -128,7 +128,7 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor:grab; /* To make cursor look the same whether it hovers over link or button: https://developer.mozilla.org/en-US/docs/Web/CSS/cursor?retiredLocale=de */
+    cursor:pointer; /* To make cursor look the same whether it hovers over link or button: https://developer.mozilla.org/en-US/docs/Web/CSS/cursor?retiredLocale=de */
 }
 
 .button:hover {
@@ -172,7 +172,7 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
     border: solid 1px #015d45;
     padding: 0.1em 0.4em;
     background-color: #ffd150;
-    cursor: grab;
+    cursor: pointer;
 }
 
 /*#close-modal:hover,
@@ -182,8 +182,8 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
 }*/
 
 /* Game.html page */
+
 #question-field {
-    
     color:#fa00a6;
     font-size: 1.5em;
     text-align: center;
@@ -193,21 +193,31 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
     /*background-color: #f9f871;*/
 }
 
-/*.btn {
-    border: solid 0.1em #015d45;
-    width: 90vw;
-    margin: 0.5em;
-    padding: 0.2em 0.4em;
-}*/
-
-.possible-answers:hover {
-    font-weight: bold;
-    background-color: #f9f871;
-    cursor: grab;
+#answer-buttons {
+    display: flex;
+    flex-direction: column;
 }
 
-#countdown {
-    margin-top: 1em;
+.btn {
+    border: solid 0.1em #015d45;
+    border-radius: 3px;
+    color:#015d45;
+    width: 90vw;
+    background-color: #f9f871;
+    font-size: 1em;
+    font-weight: bolder;
+    margin: 0.5em;
+    padding: 0.3em 0.4em;
+    text-align: left;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #ffd150;
+}
+
+#next-btn {
+    display: none;
 }
 
 /* Footer */
@@ -247,7 +257,7 @@ footer i {
         margin-top: 96px;
     }
 
-    .possible-answers {
+    .btn {
         width: 80vw;
     }
 }
