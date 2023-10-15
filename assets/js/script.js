@@ -75,6 +75,8 @@ const questions = [
     }
 ];
 
+// START OF QUIZ CODE
+
 const questionElement = document.getElementById("question-field");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
