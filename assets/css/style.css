@@ -212,12 +212,24 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
     cursor: pointer;
 }
 
-.btn:hover {
+.btn:hover:not([disabled]) {
     background-color: #ffd150;
+}
+
+.btn:disabled {
+    cursor: no-drop;
 }
 
 #next-btn {
     display: none;
+}
+
+.correct {
+    background-color: lightgreen;
+}
+
+.incorrect {
+    background-color: lightcoral;
 }
 
 /* Footer */
