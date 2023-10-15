@@ -182,7 +182,7 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
 }*/
 
 /* Game.html page */
-#question {
+#question-field {
     
     color:#fa00a6;
     font-size: 1.5em;
@@ -193,12 +193,12 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
     /*background-color: #f9f871;*/
 }
 
-.possible-answers {
+/*.btn {
     border: solid 0.1em #015d45;
     width: 90vw;
     margin: 0.5em;
     padding: 0.2em 0.4em;
-}
+}*/
 
 .possible-answers:hover {
     font-weight: bold;
