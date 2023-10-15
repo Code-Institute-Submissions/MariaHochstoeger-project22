@@ -45,21 +45,33 @@ function validateUsernameAndStart() {
 
 // Question objects
 
-let questions = [
+const questions = [
     { 
         question: "What is the Haldi ceremony?",
-        alternatives: ["Kurkuma", "Garlic", "Rose", "Cumin"],
-        correctAnswer: "Kurkuma", //need this comma?
+        answers: [
+            { text: "Kurkuma", correct: true},
+            { text: "Garlic", correct: false},
+            { text: "Rose", correct: false},
+            { text: "Cumin", correct: false},
+        ]
     },
     {
         question: "What is the Baraat ceremony?",
-        alternatives: ["Goat", "Sheep", "Horse", "Cow"],
-        correctAnswer: "Horse",
+        answers: [
+            { text: "Goat", correct: false},
+            { text: "Sheep", correct: false},
+            { text: "Horse", correct: true},
+            { text: "Cow", correct: false},
+        ]
     },
     {
         question: "What is the Mehndi ceremony?",
-        alternatives: ["Drink", "Dance", "Sing", "Henna"],
-        correctAnswer: "Henna",
+        answers: [
+            { text: "Drink", correct: false},
+            { text: "Dance", correct: false},
+            { text: "Sing", correct: false},
+            { text: "Henna", correct: true},
+        ]
     }
 ];
 
