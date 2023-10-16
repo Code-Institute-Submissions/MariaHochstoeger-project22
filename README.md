@@ -40,57 +40,21 @@ Inspiration image: <br>
 
 ## Features
 
-The site has the very basic features of a static website.
+The site has the basic features of a static website as well as some interactive features written in JavaScript.
 
-- **Navigation Bar**
-    - The navigation bar is always visible on all pages. In the top left corner the logo is a link which brings the user back to the home page, as a user would expect it to.
-    - The page which is currently active is underlined in the header.
-    - Depending on the screen format, the navigation bar is split into two lines or spaced onto a single line (tablets and wider).
-
-    ![Navigation Bar](assets/images/readme-images/navigation-bar.png)
-
-- **Hero image**
-    - The hero image was chosen as it depicts the Schönbrunn castle, one of Vienna's most famous sites. 
-    - The relation to Vienna was deemed to be important as this is an English-language website targeted mostly at people located in Vienna. This way, people immediately get an association with Vienna even though the site is not in German language.
-    - Also, for those with some more knowledge about psychoanalytics, Sigmund Freud, the "godfather of psychoanalytics" was from and mostly worked in Vienna. In professional circles, Vienna still has a very good reputation when it comes to producing good psychoanalysts/psychotherapists.
-    - Since the rest of the site is quite calm and quiet, it was decided to keep the image at full opacity to make it pop.
-
-    ![Hero image](assets/images/readme-images/hero-image.png)
+- **Header**
+    - ...
 
 - **Main section**
-    - Subheaders on all pages give cues about the content of the individual parts.
-    - Content varies depending on the page. 
-    - Texts are kept short to help the user find information quickly.
-
-- **Home page and call to action**
-    - A picture of Dr. Himanshu Giri greets the user to give them a first impression of him. It is rounded for a softer look.
-    - The welcome text gives the user a first understanding of what Dr. Giri offers.
-    - Layout is vertical for smaller screens and horizontal to make good use of larger screens.
-    - A call to action motivates the user to book a session. The button is a link which directs the user to the contact page.
-
-    ![Home page including headshot of Dr Giri, welcome text and call to action](assets/images/readme-images/home-page-incl-headshot-text-and-call-to-action.png)
-
-- **About page**
-    - Images are related to the content they are associated with. They show pictures of various scenes which one might encounter in a therapy setting.
-    - The information that site visitors will mostly look for is listed in clear list format, using bullet points where too many items make up the list.
-    - Little icons give a playful vibe, giving lightness to heavy issues.
-    - Layout is vertical for smaller screens and horizontal to make good use of larger screens.
-
-    ![About page](assets/images/readme-images/about-page.png)
-
-- **Contact page**
-    - A form encourages visitors to leave their contact details for Dr. Giri to get in touch with them directly.
-    - Should the site visitor choose to contact Dr. Giri themselves, they are provided with the address, email and phone details. The email address is provided as a link.
-    - On larger screens, the contact information is displayed horizontally and separated into two columns for a cleaner look.
-
-    ![Contact page](assets/images/readme-images/contact-page.png)
+    - ...
 
 - **Footer**
-    - The footer contains three icons which link to external social media sites.
-    - The links open in new tabs, making it easy for users to come back to the site of Dr. Giri.
+    - The footer contains a copyright symbol and the author's, ie me, name.
+    - There is a LinkedIn icon.
+    - The icon opens in a new tab, making it easy for users to come back to the quiz site.
     - The footer is consistent throughout the pages.
 
-    ![Footer](assets/images/readme-images/footer.png)
+    ![Footer](...)
 
 ### Possible Future Features
 
