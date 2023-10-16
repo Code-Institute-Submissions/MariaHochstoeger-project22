@@ -30,10 +30,13 @@ The wireframes were made in Figma. A mockup of a mobile screen was chosen since 
 
 **Colours:** The colour palette was generated using [mycolor.space](https://mycolor.space/?hex=%23FA00A6&sub=1). The reference colours were picked from the inspiration image (taken from Pexel) which shows a man with his face full of paint powder, which is common during one of the biggest Indian festivals, Holi, also called the Festival of Colors. Although Holi does not have an association with Indian weddings, the color scheme was chosen as these types of colors are often associated with India more broadly. Furthermore, the colors are bright, vivid and fun, which is an association the quiz would like to evoke.
 
-![Inspiration image](assets/images/readme-images/face-with-holi-colors-compressed.jpg)
-![Colour palette](assets/images/readme-images/generic-gradient.png)
+Inspiration image: <br>
+<img src="assets/images/readme-images/face-with-holi-colors-compressed.jpg" alt="Face of a man covered in colorful powders" width="300"/> <br>
+![Colour palette](assets/images/readme-images/generic-gradient.png)<br>
+![Picked green color](assets/images/readme-images/picked-color-hashtag015d45.png)<br>
+![Generated squash palette](assets/images/readme-images/squash-palette.png)
 
-**Images:** Images besides the header image of the blue sky, are either of Dr. Giri, or of Vienna, or of various therapy settings. All images relate to the content of the page while not being too direct (ie instead of an image of money being exchanged, an image of shaking hands was chosen).
+**Images:** No images are displayed on the site itself. As described above, an inspiration image was used to generate the colour palette.
 
 ## Features
 
@@ -214,10 +217,11 @@ This site was deployed on GitHub Pages:
 - Love Running walk-through project for basic structures of header and footer
 - Favicon: <a target="_blank" href="https://icons8.com/icon/ZFiK6ATniCG5/heart">Heart</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 - The mock-up image of the site on different devices was generated using [techsini.com](https://techsini.com/multi-mockup/)
-- //All images taken from pexels.com
-- //Images were compressed using [iloveimg.com](https://www.iloveimg.com/)
+- All images taken from pexels.com
+- Images were compressed using [iloveimg.com](https://www.iloveimg.com/)
 - //Icons were taken from [fontawesome.com](https://fontawesome.com/)
 
 ## Credits
 - Modal: https://www.w3schools.com/howto/howto_css_modals.asp
 - Quiz: Tutorial from https://www.youtube.com/watch?v=PBcqGxrr9g8&t=118s 
+- How to make the inspiration image in this readme.md file smaller: https://stackoverflow.com/questions/14675913/changing-image-size-in-markdown
