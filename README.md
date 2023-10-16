@@ -58,41 +58,25 @@ The site has the basic features of a static website as well as some interactive 
 
 ### Possible Future Features
 
-- Include a video
+- Include a timer
 
-    Dr. Giri has given a Ted Talk. I would like to embed this video directly on the about page.
-
-- Improve the about page
-
-    Make the costs on the about page into a table giving an easier overview to the site visitor.
-
-- Give the user more options with the form
-
-    I would like to give the site visitor the option to choose whether they would like to be contacted via email or via phone, and if phone, at which times.
+    ...
 
 ## UX
 
 ### Site Goals
 
-The site wants to attract people who face mental or psychological challenges in their lives and are looking for professional help from a qualified psychotherapist. Particularly, the site should speak to English- or Hindi-speaking people located in Vienna, or who would like to try psychotherapy online. 
+The site wants to ...
 
 ### User Stories
 
 **As a site visitor:**
 
-- I want to confirm that Dr. Giri is a qualified psychotherapist.
-- I want to know which languages Dr. Giri speaks.
-- I want to learn about the types of sessions he offers.
-- I want to know how much a session costs.
-- I want to find out whether Dr. Giri specializes in the field which I struggle with.
-- I want to see where Dr. Giri is located.
-- I want to be able to get in contact with Dr. Giri in the manner that I choose to.
-- I want to see a mobile-friendly layout and responsive design.
+- I want to ...
 
 **As the site administrator:**
 
-- I want to be able to easily update information such as pricing or location.
-- I want to be able to add new content such as videos.
+- I want to be able to ...
 
 ## Testing
 
