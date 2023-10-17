@@ -1,50 +1,17 @@
 // Variables in the global space
-
 const usernameField = document.getElementById("input-name");
 const startButton = document.getElementById("lets-start");
+const questionElement = document.getElementById("question-field");
+const answerButtons = document.getElementById("answer-buttons");
+const nextButton = document.getElementById("next-btn");
+const rulesButton = document.getElementById("rules-button");
+const rulesModal = document.getElementById("rules-modal");
+const closeModal = document.getElementById("close-modal");
 
-// DOM to be loaded before starting game
+let currentQuestionIndex = 0;
+let score = 0;
 
-document.addEventListener("DOMContentLoaded", function() {
-    let rulesButton = document.getElementById("rules-button");
-    let rulesModal = document.getElementById("rules-modal");
-
-    // Modal to display when "How to Play"-button is clicked
-    rulesButton.onclick = function() {
-        rulesModal.style.display = "block";
-    }
-
-    let closeModal = document.getElementById("close-modal")
-
-    // Modal to close when "X" is clicked
-    closeModal.onclick = function() {
-    rulesModal.style.display = "none";
-    }
-
-    // Modal to close when anywhere outside the modal is clicked
-    window.onclick = function(event) {
-        if (event.target == rulesModal) {
-            rulesModal.style.display = "none";
-        }
-    }
-});
-
-// Add event listener to Start Button
-// Inspiration from: https://github.com/raccodes09/ci-pp2-project/blob/main/assets/js/script.js
-startButton.addEventListener("click", validateUsernameAndStart);
-
-// Validate that username is not blank and redirect to game page 
-function validateUsernameAndStart() {
-    // for trim: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim?retiredLocale=de
-    if (usernameField.value.trim() != "") {
-        window.location.href = "game.html";
-    } else {
-        alert("Please fill in a name!");
-    }
-};
-
-// Question objects
-
+// Questions
 const questions = [
     { 
         question: "What is the Haldi ceremony?",
@@ -75,14 +42,51 @@ const questions = [
     }
 ];
 
+// Event Listeners
+startButton.addEventListener("click", validateUsernameAndStart); // Add event listener to Start Button; Inspiration from: https://github.com/raccodes09/ci-pp2-project/blob/main/assets/js/script.js
+rulesButton.addEventListener("click", () => { // Modal to display when "How to Play"-button is clicked
+    rulesModal.style.display = "block";
+});
+closeModal.addEventListener("click", () => { // Modal to close when "X" is clicked
+    rulesModal.style.display = "none";
+});
+window.addEventListener ("click", (event) => { // Modal to close when anywhere outside the modal is clicked
+    if (event.target === rulesModal) {
+        rulesModal.style.display = "none";
+    }
+});
+
+nextButton.addEventListener("click", () => {
+    if (currentQuestionIndex < questions.length -1) { // do I understand correctly that the -1 is the "correct" thing to do but in this case wouldn't have an impact as the index will always be shorter as the index starts from 0?
+        currentQuestionIndex++;
+        showQuestion();
+    } else {
+        showScore();
+    }
+})
+
+
+// DOM to be loaded before starting game
+
+document.addEventListener("DOMContentLoaded", function() {
+    
+
+});
+
+
+
+// Validate that username is not blank and redirect to game page 
+function validateUsernameAndStart() {
+    // for trim: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim?retiredLocale=de
+    if (usernameField.value.trim() != "") {
+        window.location.href = "game.html";
+    } else {
+        alert("Please fill in a name!");
+    }
+};
+
+
 // START OF QUIZ CODE
-
-const questionElement = document.getElementById("question-field");
-const answerButtons = document.getElementById("answer-buttons");
-const nextButton = document.getElementById("next-btn");
-
-let currentQuestionIndex = 0;
-let score = 0;
 
 // startQuiz function to reset counts to 0 
 
@@ -166,14 +170,5 @@ function handleNextButton() {
     }
 };
 
-/* Tell next button what to do
-Either show next Question or start quiz */
-nextButton.addEventListener("click", ()=> {
-    if(currentQuestionIndex < questions.length) {
-        handleNextButton();
-    } else {
-        startQuiz();
-    }
-})
 
 startQuiz();
