@@ -8,6 +8,9 @@ const rulesButton = document.getElementById("rules-button");
 const rulesModal = document.getElementById("rules-modal");
 const closeModal = document.getElementById("close-modal");
 const welcomeContainer = document.getElementById("container");
+const homeButton = document.getElementById("home-button");
+
+homeButton.style.display = "none";
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -91,6 +94,10 @@ nextButton.addEventListener("click", () => {
     }
 });
 
+homeButton.addEventListener("click", () => {
+    location.href="index.html";
+});
+
 
 
 // Functions
@@ -163,4 +170,6 @@ function showScore() { // Show the score, display next button and ask player to 
     questionElement.innerHTML = `${usernameStored}, you scored ${score} out of ${questions.length}!`;
     nextButton.innerHTML = "Play again";
     nextButton.style.display = "block";
+    homeButton.innerHTML = "Home";
+    homeButton.style.display = "block";
 }
