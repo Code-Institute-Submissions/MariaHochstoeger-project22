@@ -103,53 +103,34 @@ function showQuestion() {
 
 function resetState() { // Remove previous answers / answer fields
     nextButton.style.display = "none";
-    while(answerButtons.firstChild) {
+    while (answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild);
     }
 }
 
-// Add class correct/incorrect to answer buttons to apply styling and increment correct score 
-function selectAnswer(e){
+function selectAnswer(e){ // Add class correct/incorrect to answer buttons to apply styling and increment correct score 
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
-    if(isCorrect){
+    if (isCorrect) {
         selectedBtn.classList.add("correct");
         score++;
     } else {
         selectedBtn.classList.add("incorrect");
     }
 
-    /* If selected answer was wrong, highlight the correct answer green by adding .correct class
-    Disable other buttons after answer was chosen */
-    Array.from(answerButtons.children).forEach(button => {
-        if(button.dataset.correct === "true") {
+    Array.from(answerButtons.children).forEach((button) => {  // If selected answer was wrong, highlight the correct answer green by adding .correct class,  Disable other buttons after answer was chosen; help: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from?retiredLocale=de
+        if (button.dataset.correct === "true") {
             button.classList.add("correct");
         }
         button.disabled = true;
     });
 
-    // Display Next button after question is answered
-    nextButton.style.display = "block";
+    nextButton.style.display = "block";  // Display Next button after question is answered
 }
 
-// Show the score, display next button and ask player to play again
-function showScore() {
+function showScore() { // Show the score, display next button and ask player to play again
     resetState();
     questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
     nextButton.innerHTML = "Play again";
     nextButton.style.display = "block";
 }
-
-/* If there are questions remaining, show next question
-Otherwise show the score at the end of the game */
-function handleNextButton() {
-    currentQuestionIndex++;
-    if(currentQuestionIndex < questions.length) {
-        showQuestion();
-    } else {
-        showScore();
-    }
-};
-
-
-startQuiz();
