@@ -173,3 +173,7 @@ This site was deployed on GitHub Pages:
 - Modal: https://www.w3schools.com/howto/howto_css_modals.asp
 - Quiz: Tutorial from https://www.youtube.com/watch?v=PBcqGxrr9g8&t=118s 
 - How to make the inspiration image in this readme.md file smaller: https://stackoverflow.com/questions/14675913/changing-image-size-in-markdown
+- Definition of Mehndi: Oxford Languages
+- Definition of Baraat: https://getethnic.com/blogs/baraat/
+- Definition of Sangeet: https://events.restless.co.uk/event-calendar/sangeet-night/
+- Definition of Haldi: https://www.ruraltreasures.com/blogs/news/the-traditional-significance-of-haldi-ceremony

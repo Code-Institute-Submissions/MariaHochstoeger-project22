@@ -17,28 +17,51 @@ const questions = [
     { 
         question: "What is the Haldi ceremony?",
         answers: [
-            { text: "Kurkuma", correct: true},
-            { text: "Garlic", correct: false},
-            { text: "Rose", correct: false},
-            { text: "Cumin", correct: false},
+            { text: "Family members and friends playfully slather the bride and groom in a paste of turmeric (haldi), oil, and milk in order to prevent evil spirits from harming the to-be-wed couple", correct: true},
+            { text: "The art or practice of applying temporary henna tattoos, especially as part of a bride or groom's preparations for a wedding", correct: false},
+            { text: "The tradition of taking seven pheras (rounds) around the sacred fire is the most important part of a marriage ceremony, and with the completion of these steps and vows, a couple is taken as married", correct: false},
+            { text: "A musical night celebrating the union of not only the couple but the bonding of both families. This celebration includes dances performed by relatives and friends of the Bride and Groom", correct: false},
+            { text: "An Indian wedding tradition where the groom accompanied by his family and friends dance all the way to the bride's doorstep or wedding venue", correct: false},
         ]
     },
     {
         question: "What is the Baraat ceremony?",
         answers: [
-            { text: "Goat", correct: false},
-            { text: "Sheep", correct: false},
-            { text: "Horse", correct: true},
-            { text: "Cow", correct: false},
+            { text: "The art or practice of applying temporary henna tattoos, especially as part of a bride or groom's preparations for a wedding", correct: false},
+            { text: "The tradition of taking seven pheras (rounds) around the sacred fire is the most important part of a marriage ceremony, and with the completion of these steps and vows, a couple is taken as married", correct: false},
+            { text: "An Indian wedding tradition where the groom accompanied by his family and friends dance all the way to the bride's doorstep or wedding venue", correct: true},
+            { text: "Family members and friends playfully slather the bride and groom in a paste of turmeric (haldi), oil, and milk in order to prevent evil spirits from harming the to-be-wed couple", correct: false},
+            { text: "A musical night celebrating the union of not only the couple but the bonding of both families. This celebration includes dances performed by relatives and friends of the Bride and Groom", correct: false},
         ]
     },
     {
         question: "What is the Mehndi ceremony?",
         answers: [
-            { text: "Drink", correct: false},
-            { text: "Dance", correct: false},
-            { text: "Sing", correct: false},
-            { text: "Henna", correct: true},
+            { text: "A musical night celebrating the union of not only the couple but the bonding of both families. This celebration includes dances performed by relatives and friends of the Bride and Groom", correct: false},
+            { text: "An Indian wedding tradition where the groom accompanied by his family and friends dance all the way to the bride's doorstep or wedding venue", correct: false},
+            { text: "Family members and friends playfully slather the bride and groom in a paste of turmeric (haldi), oil, and milk in order to prevent evil spirits from harming the to-be-wed couple", correct: false},
+            { text: "The tradition of taking seven pheras (rounds) around the sacred fire is the most important part of a marriage ceremony, and with the completion of these steps and vows, a couple is taken as married", correct: false},
+            { text: "The art or practice of applying temporary henna tattoos, especially as part of a bride or groom's preparations for a wedding", correct: true},
+        ]
+    },
+    {
+        question: "What is the Sangeet ceremony?",
+        answers: [
+            { text: "An Indian wedding tradition where the groom accompanied by his family and friends dance all the way to the bride's doorstep or wedding venue", correct: false},
+            { text: "Family members and friends playfully slather the bride and groom in a paste of turmeric (haldi), oil, and milk in order to prevent evil spirits from harming the to-be-wed couple", correct: false},
+            { text: "A musical night celebrating the union of not only the couple but the bonding of both families. This celebration includes dances performed by relatives and friends of the Bride and Groom", correct: true},
+            { text: "The art or practice of applying temporary henna tattoos, especially as part of a bride or groom's preparations for a wedding", correct: false},
+            { text: "The tradition of taking seven pheras (rounds) around the sacred fire is the most important part of a marriage ceremony, and with the completion of these steps and vows, a couple is taken as married", correct: false},
+        ]
+    },
+    {
+        question: "What is considered the most important part of a marriage ceremony?",
+        answers: [
+            { text: "The tradition of taking seven pheras (rounds) around the sacred fire is the most important part of a marriage ceremony, and with the completion of these steps and vows, a couple is taken as married", correct: true},
+            { text: "A musical night celebrating the union of not only the couple but the bonding of both families. This celebration includes dances performed by relatives and friends of the Bride and Groom", correct: false},
+            { text: "The art or practice of applying temporary henna tattoos, especially as part of a bride or groom's preparations for a wedding", correct: false},
+            { text: "An Indian wedding tradition where the groom accompanied by his family and friends dance all the way to the bride's doorstep or wedding venue", correct: false},
+            { text: "Family members and friends playfully slather the bride and groom in a paste of turmeric (haldi), oil, and milk in order to prevent evil spirits from harming the to-be-wed couple", correct: false},
         ]
     }
 ];
