@@ -7,6 +7,7 @@ const nextButton = document.getElementById("next-btn");
 const rulesButton = document.getElementById("rules-button");
 const rulesModal = document.getElementById("rules-modal");
 const closeModal = document.getElementById("close-modal");
+const welcomeContainer = document.getElementsByClassName("container"); // does it work?
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -130,7 +131,8 @@ function selectAnswer(e){ // Add class correct/incorrect to answer buttons to ap
 
 function showScore() { // Show the score, display next button and ask player to play again
     resetState();
-    questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
+    let username1 = usernameField.value.trim();
+    questionElement.innerHTML = `${username1}, You scored ${score} out of ${questions.length}!`;
     nextButton.innerHTML = "Play again";
     nextButton.style.display = "block";
 }
