@@ -7,7 +7,8 @@ const nextButton = document.getElementById("next-btn");
 const rulesButton = document.getElementById("rules-button");
 const rulesModal = document.getElementById("rules-modal");
 const closeModal = document.getElementById("close-modal");
-const welcomeContainer = document.getElementsByClassName("container"); // does it work?
+const welcomeContainer = document.getElementById("container"); // does it work?
+const trialHeading = document.getElementById("heading");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -71,6 +72,7 @@ function validateUsernameAndStart() { // Validate that username is not blank and
     const username = usernameField.value.trim();
     if (username !== "") {
         startQuiz();
+        welcomeContainer.style.display = "none";
     } else {
         alert("Please fill in a name!");
     }
@@ -132,7 +134,7 @@ function selectAnswer(e){ // Add class correct/incorrect to answer buttons to ap
 function showScore() { // Show the score, display next button and ask player to play again
     resetState();
     let username1 = usernameField.value.trim();
-    questionElement.innerHTML = `${username1}, You scored ${score} out of ${questions.length}!`;
+    questionElement.innerHTML = `${username1}, you scored ${score} out of ${questions.length}!`;
     nextButton.innerHTML = "Play again";
     nextButton.style.display = "block";
 }
