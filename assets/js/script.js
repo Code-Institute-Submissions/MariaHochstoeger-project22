@@ -57,40 +57,25 @@ window.addEventListener ("click", (event) => { // Modal to close when anywhere o
 });
 
 nextButton.addEventListener("click", () => {
-    if (currentQuestionIndex < questions.length -1) { // do I understand correctly that the -1 is the "correct" thing to do but in this case wouldn't have an impact as the index will always be shorter as the index starts from 0?
+    if (currentQuestionIndex < questions.length -1) {
         currentQuestionIndex++;
         showQuestion();
     } else {
         showScore();
     }
-})
-
-
-// DOM to be loaded before starting game
-
-document.addEventListener("DOMContentLoaded", function() {
-    
-
 });
 
-
-
-// Validate that username is not blank and redirect to game page 
-function validateUsernameAndStart() {
-    // for trim: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim?retiredLocale=de
-    if (usernameField.value.trim() != "") {
-        window.location.href = "game.html";
+// Functions
+function validateUsernameAndStart() { // Validate that username is not blank and redirect to game page;for trim: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim?retiredLocale=de
+    const username = usernameField.value.trim();
+    if (username !== "") {
+        startQuiz();
     } else {
         alert("Please fill in a name!");
     }
-};
+}
 
-
-// START OF QUIZ CODE
-
-// startQuiz function to reset counts to 0 
-
-function startQuiz() {
+function startQuiz() { // startQuiz function to reset counts to 0 
     currentQuestionIndex = 0;
     score = 0;
     nextButton.innerHTML = "Next";
@@ -99,30 +84,26 @@ function startQuiz() {
 
 function showQuestion() {
     resetState();
-    let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1;
+    const currentQuestion = questions[currentQuestionIndex];
+    const questionNo = currentQuestionIndex + 1; 
+    questionElement.innerHTML = questionNo + ". " + currentQuestion.question; // Display a numbered question
 
-    // Display a numbered question
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
-
-    // File the answer possibilities into the answerButtons
-    currentQuestion.answers.forEach(answer => {
+    currentQuestion.answers.forEach((answer) => { // File the answer possibilities into the answerButtons
         const button = document.createElement("button");
         button.innerHTML = answer.text;
         button.classList.add("btn");
         answerButtons.appendChild(button);
 
-        if(answer.correct){
+        if(answer.correct) {
             button.dataset.correct = answer.correct;
         }
         button.addEventListener("click", selectAnswer);
     });
 }
 
-// Remove previous answers / answer fields
-function resetState() {
+function resetState() { // Remove previous answers / answer fields
     nextButton.style.display = "none";
-    while(answerButtons.firstChild){
+    while(answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild);
     }
 }
