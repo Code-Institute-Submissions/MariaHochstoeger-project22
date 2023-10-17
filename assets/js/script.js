@@ -7,8 +7,7 @@ const nextButton = document.getElementById("next-btn");
 const rulesButton = document.getElementById("rules-button");
 const rulesModal = document.getElementById("rules-modal");
 const closeModal = document.getElementById("close-modal");
-const welcomeContainer = document.getElementById("container"); // does it work?
-const trialHeading = document.getElementById("heading");
+const welcomeContainer = document.getElementById("container");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -59,13 +58,17 @@ window.addEventListener ("click", (event) => { // Modal to close when anywhere o
 });
 
 nextButton.addEventListener("click", () => {
-    if (currentQuestionIndex < questions.length -1) {
+     if (currentQuestionIndex < questions.length -1) {
         currentQuestionIndex++;
         showQuestion();
-    } else {
+     } else if (nextButton.innerHTML === "Play again") {
+        startQuiz();
+     } else {
         showScore();
     }
 });
+
+
 
 // Functions
 function validateUsernameAndStart() { // Validate that username is not blank and redirect to game page;for trim: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim?retiredLocale=de
@@ -133,8 +136,8 @@ function selectAnswer(e){ // Add class correct/incorrect to answer buttons to ap
 
 function showScore() { // Show the score, display next button and ask player to play again
     resetState();
-    let username1 = usernameField.value.trim();
-    questionElement.innerHTML = `${username1}, you scored ${score} out of ${questions.length}!`;
+    let usernameStored = usernameField.value.trim();
+    questionElement.innerHTML = `${usernameStored}, you scored ${score} out of ${questions.length}!`;
     nextButton.innerHTML = "Play again";
     nextButton.style.display = "block";
 }
