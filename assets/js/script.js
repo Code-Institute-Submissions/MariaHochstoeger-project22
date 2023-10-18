@@ -14,6 +14,7 @@ homeButton.style.display = "none";
 
 let currentQuestionIndex = 0;
 let score = 0;
+let username = "";
 
 // Questions
 const questions = [
@@ -95,14 +96,14 @@ nextButton.addEventListener("click", () => {
 });
 
 homeButton.addEventListener("click", () => {
-    location.href="index.html";
+    window.location.reload();
 });
 
 
 
 // Functions
 function validateUsernameAndStart() { // Validate that username is not blank and redirect to game page;for trim: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim?retiredLocale=de
-    const username = usernameField.value.trim();
+    username = usernameField.value.trim();
     if (username !== "") {
         startQuiz();
         welcomeContainer.style.display = "none";
@@ -144,6 +145,10 @@ function resetState() { // Remove previous answers / answer fields
     }
 }
 
+/**
+* text 
+* text 
+*/
 function selectAnswer(e){ // Add class correct/incorrect to answer buttons to apply styling and increment correct score 
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
@@ -166,8 +171,7 @@ function selectAnswer(e){ // Add class correct/incorrect to answer buttons to ap
 
 function showScore() { // Show the score, display next button and ask player to play again
     resetState();
-    let usernameStored = usernameField.value.trim();
-    questionElement.innerHTML = `${usernameStored}, you scored ${score} out of ${questions.length}!`;
+    questionElement.innerHTML = `${username}, you scored ${score} out of ${questions.length}!`;
     nextButton.innerHTML = "Play again";
     nextButton.style.display = "block";
     homeButton.innerHTML = "Home";
