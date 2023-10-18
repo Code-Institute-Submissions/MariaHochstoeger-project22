@@ -4,7 +4,7 @@ Visit the live site [here](https://mariahochstoeger.github.io/project2/).
 
 ![responsive mock-up](...)
 
-This is a quiz about Indian weddings. It lets the user test their knowledge about some of the most common events - usually called "functions" - of a traditional Indian Hindu wedding. On the website and in this readme, the terms "Hindu wedding" and "Indian wedding" are used interchangeably.
+This is a quiz about Indian weddings. It lets the user test their knowledge about some of the most common events - usually called "functions" - found in a traditional Indian Hindu wedding. On the website and in this readme, the terms "Hindu wedding" and "Indian wedding" are used interchangeably.
 
 ## Table of Contents
 
@@ -43,51 +43,105 @@ Inspiration image: <br>
 The site has the basic features of a static website as well as some interactive features written in JavaScript.
 
 - **Header**
-    - ...
+    - The header is always visible throughout the game. It contains the title of the quiz.
+    - It is static, without any interactive elements.
+    ![header](assets/images/readme-images/header.png)
 
 - **Main section**
+    - The main part of the site contains the interactive and changeable elements of the site. 
+    - There is a welcome heading and tagline about the quiz. These elements will disappear as the game progresses but are not interactive.
+    - Below, the interactive elements are shown: a username input field, a "Let's start"-button, and a "How to play"-button.
+    ![Main part of the page](assets/images/readme-images/body.png)
+
+- **Username input field and validation**
+    - The username input field with the placeholder text "Type your name" invites the user to input their chosen username.
+    - The username is a required input.
+    - Should the user click "Let's start" without having provided a username, or having provided only spaces, an error message appears prompting the user to "Please fill in a name!".
+    ![Error message if no username was provided](assets/images/readme-images/error-message.png)
+
+- **Rules**
+    - If the user would like to know the rules of the game, they can click the "How to play" button.
+    - A modal with the rules opens.
+    - The modal can be used by either clicking the little X in the top right corner of the modal, or clicking anywhere on the page outside the modal
+    ![Rules of the game](assets/images/readme-images/rules.png)
+
+- **Let's Start**
+    - If the user feels comfortable to start playing they can click on the "Let's Start" button.
+    - Upon clicking the button, the username input gets validated and - if successful - the game starts.<br>
+    ![Username input field and start and rules buttons](assets/images/readme-images/user-input-field.png)
+
+- **Question field**
     - ...
 
-- **Footer**
-    - The footer contains a copyright symbol and the author's, ie me, name.
-    - There is a LinkedIn icon.
-    - The icon opens in a new tab, making it easy for users to come back to the quiz site.
-    - The footer is consistent throughout the pages.
+- **Answer buttons**
+    -...
 
-    ![Footer](...)
+- **Final score**
+    -...
+
+- **Play again or Home buttons**
+    -...
+
+- **Footer**
+    - The footer contains a copyright symbol and the author's, ie my, name.
+    - There is a LinkedIn icon. The icon opens in a new tab, making it easy for users to come back to the quiz site.
+    - The footer is consistent throughout the pages.
+    ![Footer](assets/images/readme-images/footer.png)
 
 ### Possible Future Features
 
 - Include a timer
 
-    ...
+    - In the future, a timer could be included in order to make the game more fast-paced and exciting.
+    - Upon clicking "Let's Start", or "Next", a timer of e.g. 30 seconds could start running.
+    - The timer is reset for each question.
+    - If the user answers within the 30 seconds, the timer stops and only starts running again at the next question.
+    - If the time has expired without the user giving an answer, the answer buttons would get disabled and the next button would appear.
+    - The respective question would be counted as incorrect.
+
+- Include a progress bar
+
+    - In order to show the user how many questions are remaining in the game, a progress bar could be introduced.
+    - With each question answered, the progress bar would fill up until it was full after answering the last question.
+    - This would give the user a better feeling of how much time the game needs, and motivate users to play until the end.
 
 ## UX
 
 ### Site Goals
 
-The site wants to ...
+The site wants to motivate users to play the game and by doing so, learn about the main functions of Indian weddings. The site wants to evoke a happy atmosphere and good feelings.
+Should the user not get all questions right from the start, the site would like to make sure it does not discourage users from trying again by simply stating the score without judging it good or bad.
 
 ### User Stories
 
 **As a site visitor:**
 
-- I want to ...
+- I want to know what this site offers at a glance.
+- I want to see a responsive design which looks good on mobile devices as well as on larger screens.
+- I want to be guided through the site by an intuitive design, and not be distracted by unnecessary elements.
+- I want to have a positive, joyful experience.
+- I want to get feedback on my actions such as inputting a username or answering questions.
+- I want to learn about Indian weddings.
+- I want to see my final score.
+- I want to be able to play again, or let a friend play on the same device after I am finished.
 
 **As the site administrator:**
 
-- I want to be able to ...
+- I want to be able to adapt the existing questions or add new questions to the game easily.
+- I want to be able to add potential future features should I so desire.
 
 ## Testing
 
 - I confirmed that this project is responsive and looks good on various common screen sizes by using the devtools devices toolbar.
-- I have confirmed that the form works and each field is required. There are error messages if a field is not filled out. If it is filled incorrectly, such as an @ missing in an email, or the phone number field containing letters, there are appropriate error messages.
-- I confirmed that header and navbar are easily readable and understandable.
+- I have confirmed that the username input validation works. There is an error message if the field is not filled out correctly.
+- I checked that the modal opens upon clicking "How to Play" and can be closed by either clicking the little X, or anywhere on the page outside the modal.
+- I made sure that the answer buttons give a correct colour-coded feedback upon selecting and clicking on an answer: red for incorrect, green for correct.
+- I ensured that the "Play again" button takes the user to the start of the quiz, while the "Home" button takes the user to the start page.
+- I confirmed that header and footer are easily readable and understandable.
 
 ### Fixed Bugs
 
-- Imported Google Fonts into html via <link>. This caused css-classes and -ids to not be applied. Fixed it by removing Google Fonts link from index.html and instead importing Google Fonts into style.css.
-- Various flexbox styling problems. Fixed flexbox styling by applying differently colored borders to better understand the individual elements' behaviours. Border colors were removed after fixing the styling.
+- JavaScript elements not working because of elements with the same class name on different html-pages. Fixed - with the great help of my mentor, Spencer Barriball - by merging the two html-files into one.
 
 ### Unfixed Bugs
 
@@ -167,7 +221,6 @@ This site was deployed on GitHub Pages:
 - The mock-up image of the site on different devices was generated using [techsini.com](https://techsini.com/multi-mockup/)
 - All images taken from pexels.com
 - Images were compressed using [iloveimg.com](https://www.iloveimg.com/)
-- //Icons were taken from [fontawesome.com](https://fontawesome.com/)
 
 ## Credits
 - Modal: https://www.w3schools.com/howto/howto_css_modals.asp
