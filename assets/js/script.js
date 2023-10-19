@@ -121,6 +121,7 @@ function startQuiz() { // startQuiz function to reset counts to 0
 
 function showQuestion() {
     resetState();
+    window.scrollTo(0, 0); // Make sure the question is visible for smaller screens; otherwise, the screen shows from the bottom
     const currentQuestion = questions[currentQuestionIndex];
     const questionNo = currentQuestionIndex + 1; 
     questionElement.innerHTML = questionNo + ". " + currentQuestion.question; // Display a numbered question
