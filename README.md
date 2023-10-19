@@ -230,3 +230,4 @@ This site was deployed on GitHub Pages:
 - Definition of Baraat: https://getethnic.com/blogs/baraat/
 - Definition of Sangeet: https://events.restless.co.uk/event-calendar/sangeet-night/
 - Definition of Haldi: https://www.ruraltreasures.com/blogs/news/the-traditional-significance-of-haldi-ceremony
+- Show the top of the screen after clicking next: https://www.w3schools.com/jsref/met_win_scrollto.asp
