@@ -144,7 +144,7 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
 }
 
 /* Modal background box */
-#rules-modal {
+.modal-outer {
     display: none; /* hidden when site loads */
     position: fixed;
     z-index: 1;
@@ -156,7 +156,7 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
 }
 
 /* Modal content box */
-#modal-content {
+.modal-inner {
     background-color: #f9f871;
     margin: 163px auto; /* 163px to make sure the modal box starts below the thickest possible header */
     width: 85%;
@@ -164,8 +164,13 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
     border-radius: 2px;
 }
 
+#error-content {
+    text-align: center;
+    font-size: large;
+}
+
 /* Close Button X */
-#close-modal {
+#close-modal, #close-error {
     float: right;
     font-size: 1em;
     font-weight: bold;
@@ -282,6 +287,10 @@ footer i {
     }
 
     #container {
+        font-size: larger;
+    }
+
+    #close-modal, #close-error {
         font-size: larger;
     }
 

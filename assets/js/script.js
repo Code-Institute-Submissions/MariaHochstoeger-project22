@@ -4,6 +4,8 @@ const startButton = document.getElementById("lets-start");
 const questionElement = document.getElementById("question-field");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
+const errorMessage = document.getElementById("error-message");
+const closeError = document.getElementById("close-error");
 const rulesButton = document.getElementById("rules-button");
 const rulesModal = document.getElementById("rules-modal");
 const closeModal = document.getElementById("close-modal");
@@ -83,6 +85,14 @@ window.addEventListener ("click", (event) => { // Modal to close when anywhere o
         rulesModal.style.display = "none";
     }
 });
+closeError.addEventListener("click", () => { // Error message to close when "X" is clicked
+    errorMessage.style.display = "none";
+});
+window.addEventListener ("click", (event) => { // Error message to close when anywhere outside the error message is clicked
+    if (event.target === errorMessage) {
+        errorMessage.style.display = "none";
+    }
+});
 
 nextButton.addEventListener("click", () => {
      if (currentQuestionIndex < questions.length -1) {
@@ -108,7 +118,7 @@ function validateUsernameAndStart() { // Validate that username is not blank and
         startQuiz();
         welcomeContainer.style.display = "none";
     } else {
-        alert("Please fill in a name!");
+        errorMessage.style.display = "block";
     }
 }
 
