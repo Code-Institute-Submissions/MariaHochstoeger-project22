@@ -12,6 +12,7 @@ const closeModal = document.getElementById("close-modal");
 const welcomeContainer = document.getElementById("container");
 const homeButton = document.getElementById("home-button");
 
+// Ensure home button is not displayed
 homeButton.style.display = "none";
 
 let currentQuestionIndex = 0;
@@ -73,27 +74,44 @@ const questions = [
 ];
 
 // Event Listeners
-startButton.addEventListener("click", validateUsernameAndStart); // Add event listener to Start Button; Inspiration from: https://github.com/raccodes09/ci-pp2-project/blob/main/assets/js/script.js
-rulesButton.addEventListener("click", () => { // Modal to display when "How to Play"-button is clicked
+
+// Add event listener to Start Button; Inspiration from: https://github.com/raccodes09/ci-pp2-project/blob/main/assets/js/script.js
+startButton.addEventListener("click", validateUsernameAndStart); 
+
+// Rules modal to display when "How to Play"-button is clicked
+rulesButton.addEventListener("click", () => { 
     rulesModal.style.display = "block";
 });
-closeModal.addEventListener("click", () => { // Modal to close when "X" is clicked
+
+// Rules modal to close when "X" is clicked
+closeModal.addEventListener("click", () => { 
     rulesModal.style.display = "none";
 });
-window.addEventListener ("click", (event) => { // Modal to close when anywhere outside the modal is clicked
+
+// Rules modal to close when anywhere outside the modal is clicked
+window.addEventListener ("click", (event) => { 
     if (event.target === rulesModal) {
         rulesModal.style.display = "none";
     }
 });
-closeError.addEventListener("click", () => { // Error message to close when "X" is clicked
+
+// Error message to close when "X" is clicked
+closeError.addEventListener("click", () => { 
     errorMessage.style.display = "none";
 });
-window.addEventListener ("click", (event) => { // Error message to close when anywhere outside the error message is clicked
+
+// Error message to close when anywhere outside the error message is clicked
+window.addEventListener ("click", (event) => { 
     if (event.target === errorMessage) {
         errorMessage.style.display = "none";
     }
 });
 
+/* 
+If the next button is clicked and there are questions left which have not yet been shown, then question to display
+If the next button has the content "Play again", upon clicking, the quiz is to start from the first question
+If the next button is clicked but there are no questions left which have not yet been shown, the score to be shown
+*/
 nextButton.addEventListener("click", () => {
      if (currentQuestionIndex < questions.length -1) {
         currentQuestionIndex++;
@@ -105,6 +123,7 @@ nextButton.addEventListener("click", () => {
     }
 });
 
+// Go to home screen when home button is clicked
 homeButton.addEventListener("click", () => {
     window.location.reload();
 });
@@ -112,6 +131,12 @@ homeButton.addEventListener("click", () => {
 
 
 // Functions
+
+/**
+ * Take username input and check whether it is correct.
+ * If correct, call startQuiz() and hide welcomeContainer
+ * If incorrect, display error message
+ */
 function validateUsernameAndStart() { // Validate that username is not blank and redirect to game page;for trim: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim?retiredLocale=de
     username = usernameField.value.trim();
     if (username !== "") {
@@ -122,21 +147,35 @@ function validateUsernameAndStart() { // Validate that username is not blank and
     }
 }
 
-function startQuiz() { // startQuiz function to reset counts to 0 
+/**
+ * Reset currentQuestionIndex and score to 0.
+ * Show "Next" in next button.
+ * Call showQuestion().
+ */
+function startQuiz() { 
     currentQuestionIndex = 0;
     score = 0;
     nextButton.innerHTML = "Next";
     showQuestion();
 }
 
+/**
+ * Call resetState() and bring user up to beginning of screen.
+ * Take currentQuestion and questionNo and display a numbered question.
+ * Take currentQuestion.answers and create individual answer buttons for each possible answer. Add class "btn" to each button.
+ * Add event listener to each newly created button and upon clicking, call selectAnswer()
+ */
 function showQuestion() {
     resetState();
-    window.scrollTo(0, 0); // Make sure the question is visible for smaller screens; otherwise, the screen shows from the bottom
+
+    // Make sure the question is visible for smaller screens; otherwise, the screen shows from the bottom
+    window.scrollTo(0, 0); 
+
     const currentQuestion = questions[currentQuestionIndex];
     const questionNo = currentQuestionIndex + 1; 
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.question; // Display a numbered question
+    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
-    currentQuestion.answers.forEach((answer) => { // File the answer possibilities into the answerButtons
+    currentQuestion.answers.forEach((answer) => { 
         const button = document.createElement("button");
         button.innerHTML = answer.text;
         button.classList.add("btn");
@@ -149,7 +188,12 @@ function showQuestion() {
     });
 }
 
-function resetState() { // Remove previous answers / answer fields
+/**
+ * Hide next button
+ * Remove all previously displayed answer possibilities
+ * Hide home button
+ */
+function resetState() { 
     nextButton.style.display = "none";
     while (answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild);
@@ -158,10 +202,12 @@ function resetState() { // Remove previous answers / answer fields
 }
 
 /**
-* text 
-* text 
+* Add class correct/incorrect to answer buttons to apply styling and increment correct score.
+* Take answerButtons.children and create array out of answer buttons.
+* If selected answer was wrong, highlight the correct answer green by adding .correct class. Disable other buttons after answer was chosen.
+* Display next button.
 */
-function selectAnswer(e){ // Add class correct/incorrect to answer buttons to apply styling and increment correct score 
+function selectAnswer(e){ 
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
     if (isCorrect) {
@@ -171,7 +217,8 @@ function selectAnswer(e){ // Add class correct/incorrect to answer buttons to ap
         selectedBtn.classList.add("incorrect");
     }
 
-    Array.from(answerButtons.children).forEach((button) => {  // If selected answer was wrong, highlight the correct answer green by adding .correct class,  Disable other buttons after answer was chosen; help: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from?retiredLocale=de
+    // Help from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from?retiredLocale=de
+    Array.from(answerButtons.children).forEach((button) => { 
         if (button.dataset.correct === "true") {
             button.classList.add("correct");
         }
@@ -181,7 +228,12 @@ function selectAnswer(e){ // Add class correct/incorrect to answer buttons to ap
     nextButton.style.display = "block";  // Display Next button after question is answered
 }
 
-function showScore() { // Show the score, display next button and ask player to play again
+/**
+ * Call resetState().
+ * Show the score, display next button with inner HTML "Play again".
+ * Display Home button.
+ */
+function showScore() {
     resetState();
     questionElement.innerHTML = `${username}, you scored ${score} out of ${questions.length}!`;
     nextButton.innerHTML = "Play again";
