@@ -28,7 +28,7 @@ The wireframes were made in Figma. A mockup of a mobile screen was chosen since 
 ### Font and Colour Choices
 **Fonts:** 'Laila' was chosen as the font for the header and main headings for its playful design with its slight nod to the Indian letters used for Hindi, Devanagari, through its gentle flares and curles at the end of the letter strokes. 'Poppins' makes up the main part of the site due to it being a quite neutral, easy-to-read but still friendly font.
 
-**Colours:** The colour palette was generated using [mycolor.space](https://mycolor.space/?hex=%23FA00A6&sub=1). The reference colours were picked from the inspiration image (taken from Pexel) which shows a man with his face full of paint powder, which is common during one of the biggest Indian festivals, Holi, also called the Festival of Colors. Although Holi does not have an association with Indian weddings, the color scheme was chosen as these types of colors are often associated with India more broadly. Furthermore, the colors are bright, vivid and fun, which is an association the quiz would like to evoke.
+**Colours:** The colour palette was generated using [mycolor.space](https://mycolor.space/?hex=%23FA00A6&sub=1). The reference colours were picked from the inspiration image (taken from [Pexels](https://www.pexels.com/)) which shows a man with his face full of paint powder, which is common during one of the biggest Indian festivals, Holi, also called the Festival of Colors. Although Holi does not have an association with Indian weddings, the color scheme was chosen as these types of colors are often associated with India more broadly. Furthermore, the colors are bright, vivid and fun, which is an association the quiz would like to evoke.
 
 Inspiration image: <br>
 <img src="assets/images/readme-images/face-with-holi-colors-compressed.jpg" alt="Face of a man covered in colorful powders" width="300"/> <br>
@@ -56,7 +56,7 @@ The site has the basic features of a static website as well as some interactive 
 - **Username input field and validation**
     - The username input field with the placeholder text "Type your name" invites the user to input their chosen username.
     - The username is a required input.
-    - Should the user click "Let's start" without having provided a username, or having provided only spaces, an error message appears prompting the user to "Please fill in a name!".<br>
+    - Should the user click "Let's start" without having provided a username, or having provided only spaces, an error message appears prompting the user to "Please fill in a username!".<br>
     ![Error message if no username was provided](assets/images/readme-images/error-message.png)<br>
 
 - **Rules**
@@ -86,7 +86,7 @@ The site has the basic features of a static website as well as some interactive 
     ![Selected answer buttons with next button](assets/images/readme-images/selected-answer-buttons-w-next-button.png)<br>
 
 - **Final score**
-    - After all questions have been answered, the users final score is displayed.
+    - After all questions have been answered, the user's final score is displayed.
     - For personalization, it is displayed next to the user's chosen username.<br>
     ![Final score](assets/images/readme-images/score.png)<br>
 
@@ -162,7 +162,7 @@ Should the user not get all questions right from the start, the site would like 
 ### Fixed Bugs
 
 - JavaScript elements not working because of elements with the same class name (.btn) on different html-pages. Fixed - with the great help of my mentor, Spencer Barriball - by merging the two html-files into one.
-- When starting the game anew after having it played once already, by clicking the "Play again!" button, the "Home" button was still visible. Fixed by setting display of the home button to none in the respective function, resetState().
+- When starting the game anew after having played once already, by clicking the "Play again!" button, the "Home" button was still visible at the newly displayed questions. Fixed by setting display of the home button to none in the respective function, resetState().
 - On mobile, when clicking "Next" after answering a question, the screenview stayed at the bottom of the page, where the Next button was. The user would like to see the next question though, ie the top of the screen. Fixed by introducing a command to scroll up into showQuestion().
 
 ### Unfixed Bugs
@@ -197,19 +197,19 @@ Should the user not get all questions right from the start, the site would like 
 | Chrome      | ✔          | ✔             |
 | Edge        | ✔          | ✔             |
 | Firefox     | ✔          | ✔             |
-| Safari*     | only available to me on iPhone |
+| Safari*     | ✔          | ✔             |
 | IE          |deprecated by Microsoft, not tested|
 
-*My mentor kindly reviewed the site for me in Safari on desktop.
+*Only available to me on iPhone. My mentor kindly reviewed the site for me in Safari on desktop.
 
 ### Manual Testing (section adapted from Kay Welfare, results are my own)
 
 | Feature     | Expect      | Action        | Result |
 | :---------: | :----------:| :-----------: | :-----:|
-| **Username input field**   | As a user, I can input my chosen user name   | Various usernames were put in  | Username inputs were accepted |
+| **Username input field**   | As a user, I can input my chosen username   | Various usernames were put in  | Username inputs were accepted |
 | **Let's Start! Button w/o username filled in**  | When clicked, an error message will appear prompting the user to fill in a name  | Clicked Let's Start! without putting in a username | Error message appeared |
 | **Let's Start! Button with username filled in** | When clicked, the game will start  | Filled in a username and clicked "Let's start!" | Game starts |
-| **How to play Button** | When clicked, a modal will open with the rules | Click How to play | Modal containing the rules of the games opens |
+| **How to play Button** | When clicked, a modal will open with the rules | Click How to play | Modal containing the rules of the game opens |
 | **Rules modal and error message** | Rules/Error message will close when clicking the little X, or outside of the modal | Clicked X, and outside the modal | The modal closed |
 | **Answer buttons** | When clicked, receive feedback on whether answer was correct/incorrect | Clicked various answer buttons | Buttons highlight orange when hovered over. Upon clicking, buttons get disabled and the correct answer is highlighted green. Incorrect answer, if chosen, is highlighted red |
 | **Next button** | Take user to next question | Click the button | Next question is displayed. After the last question, final score is displayed. |
@@ -223,7 +223,7 @@ Should the user not get all questions right from the start, the site would like 
 | :---------------------------------: | :------------------------------:|
 | I want to know what this site offers at a glance. | As a visitor, I can see the header which tells me the topic of the site, and a message telling me that this is a game |
 | I want to see a responsive design which looks good on mobile devices as well as on larger screens. | As a visitor, I have a good view of the site on mobile device without overflow or side-scrolling |
-| I want to be guided through the site by an intuitive design, and not be distracted by unnecessary elements. | As a visitor, all options I can choose from, such as inputting a username, or learning the rules of the game, are displayed on one page |
+| I want to be guided through the site by an intuitive design, and not be distracted by unnecessary elements. | As a visitor, all options I can choose from, such as inputting a username, or learning the rules of the game, or choosing an answer, are displayed on one page |
 | I want to have a positive, joyful experience. | As a visitor, I am greeted by a joy- and colorful design which is consistent throughout the game |
 | I want to get feedback on my actions such as inputting a username or answering questions. | As a visitor, I get an error message if I forgot to put in a username. I also get color-coded feedback whether my chosen answer is correct or not |
 | I want to learn about Indian weddings. | As a visitor, I can take my time to read through the answers and learn about different functions of Indian weddings |
@@ -246,7 +246,7 @@ This site was deployed on GitHub Pages:
 - Love Running walk-through project for basic structures of header and footer
 - Favicon: <a target="_blank" href="https://icons8.com/icon/ZFiK6ATniCG5/heart">Heart</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 - The mock-up image of the site on different devices was generated using [techsini.com](https://techsini.com/multi-mockup/)
-- All images taken from pexels.com
+- All images taken from [pexels.com](https://www.pexels.com/)
 - Images were compressed using [iloveimg.com](https://www.iloveimg.com/)
 
 ## Credits
