@@ -2,7 +2,7 @@
 
 Visit the live site [here](https://mariahochstoeger.github.io/project2/).
 
-![responsive mock-up](...)
+![responsive mock-up](assets/images/readme-images/mockup.png)
 
 This is a quiz about Indian weddings. It lets the user test their knowledge about some of the most common events - usually called "functions" - found in a traditional Indian Hindu wedding. On the website and in this readme, the terms "Hindu wedding" and "Indian wedding" are used interchangeably.
 
@@ -23,7 +23,7 @@ The site was created with persons in mind who have not had any point of contact 
 
 The wireframes were made in Figma. A mockup of a mobile screen was chosen since the site was built using the mobile-first approach. The wireframes were kept very simple and the focus was on structure rather than design. The wireframes also include a countdown field which was not implemented in the basic version of the game. It is a possible future feature.
 
-![Wireframes for mobile](assets/images/readme-images/wireframes_indian_wedding.png)
+![Wireframes for mobile](assets/images/readme-images/wireframes_indian_wedding.png) <br>
 
 ### Font and Colour Choices
 **Fonts:** 'Laila' was chosen as the font for the header and main headings for its playful design with its slight nod to the Indian letters used for Hindi, Devanagari, through its gentle flares and curles at the end of the letter strokes. 'Poppins' makes up the main part of the site due to it being a quite neutral, easy-to-read but still friendly font.
@@ -44,31 +44,31 @@ The site has the basic features of a static website as well as some interactive 
 
 - **Header**
     - The header is always visible throughout the game. It contains the title of the quiz.
-    - It is static, without any interactive elements.
+    - It is static, without any interactive elements.<br>
     ![header](assets/images/readme-images/header.png)
 
 - **Main section**
     - The main part of the site contains the interactive and changeable elements of the site. 
     - There is a welcome heading and tagline about the quiz. These elements will disappear as the game progresses but are not interactive.
-    - Below, the interactive elements are shown: a username input field, a "Let's start"-button, and a "How to play"-button.
-    ![Main part of the page](assets/images/readme-images/body.png)
+    - Below, the interactive elements are shown: a username input field, a "Let's start"-button, and a "How to play"-button.<br>
+    ![Main part of the page](assets/images/readme-images/body.png)<br>
 
 - **Username input field and validation**
     - The username input field with the placeholder text "Type your name" invites the user to input their chosen username.
     - The username is a required input.
-    - Should the user click "Let's start" without having provided a username, or having provided only spaces, an error message appears prompting the user to "Please fill in a name!".
-    ![Error message if no username was provided](assets/images/readme-images/error-message.png)
+    - Should the user click "Let's start" without having provided a username, or having provided only spaces, an error message appears prompting the user to "Please fill in a name!".<br>
+    ![Error message if no username was provided](assets/images/readme-images/error-message.png)<br>
 
 - **Rules**
     - If the user would like to know the rules of the game, they can click the "How to play" button.
     - A modal with the rules opens.
-    - The modal can be used by either clicking the little X in the top right corner of the modal, or clicking anywhere on the page outside the modal
-    ![Rules of the game](assets/images/readme-images/rules.png)
+    - The modal can be used by either clicking the little X in the top right corner of the modal, or clicking anywhere on the page outside the modal<br>
+    ![Rules of the game](assets/images/readme-images/rules.png)<br>
 
 - **Let's Start**
     - If the user feels comfortable to start playing they can click on the "Let's Start" button.
     - Upon clicking the button, the username input gets validated and - if successful - the game starts.<br>
-    ![Username input field and start and rules buttons](assets/images/readme-images/user-input-field.png)
+    ![Username input field and start and rules buttons](assets/images/readme-images/user-input-field.png)<br>
 
 - **Question field**
     - ...
@@ -150,12 +150,11 @@ Should the user not get all questions right from the start, the site would like 
 ### Validator Testing
 
 - HTML ([W3C Validator](https://validator.w3.org/))
-    - 3 errors found: two out of three errors were "section lacks heading". The other one was "The element ```a``` must not be a descendent of the `button` element."
-    - Solution: introduced headings to the two relevant sections and set them to non-displayed. Styling the `a` as a button and removing the button element.
+    - 1 error found: "Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections, or else use a div element instead for any cases where no heading is needed."
+    - Solution: introduced h4-element to the section and set it to display = none.
 
 - CSS ([Jigsaw](https://jigsaw.w3.org/css-validator/))
-    - 1 error found: "min-width too many values or values are not recognized: `none`".
-    - Solution: removed min-width. It wasn't necessary anyways.
+    - No error found.
 
 - Performance, Accessibility, Best Practices, SEO (Lighthouse Chrome Dev Tools)
     - Accessibility is at 100, which is what the focus was one.

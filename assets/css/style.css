@@ -79,6 +79,10 @@ main {
     align-items: center;
 }
 
+h4 {
+    display: none;
+}
+
 #user-div {
     display: flex;
     flex-direction: column;
