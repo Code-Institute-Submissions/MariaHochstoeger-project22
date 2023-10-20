@@ -197,7 +197,7 @@ function resetState() {
     nextButton.style.display = "none";
     while (answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild);
-    };
+    }
     homeButton.style.display = "none";
 }
 

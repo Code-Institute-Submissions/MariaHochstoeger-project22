@@ -71,16 +71,30 @@ The site has the basic features of a static website as well as some interactive 
     ![Username input field and start and rules buttons](assets/images/readme-images/user-input-field.png)<br>
 
 - **Question field**
-    - ...
+    - In the question field, a number appears. Currently, it starts with "1." and goes up to "5."
+    - Next to the number, the current question is displayed.<br>
+    ![Question field](assets/images/readme-images/question-field.png)<br>
 
-- **Answer buttons**
-    -...
+- **Answer buttons and next button**
+    - Below the question field, 5 answer buttons are displayed.
+    - Each button contains a possible answer.
+    - When the question and buttons first appear, the buttons are of the same color. They change color upon hovering over.
+    - Once an answer is selected, the correct answer is highlighted green.
+    - If an incorrect answer was selected, this incorrectly selected answer is highlighted in red.
+    - Simultaneously, upon selecting an answer, all answer buttons get disabled. A new button, the next button, appears below the answer buttons. This button needs to be clicked in order to proceed to the next question.<br>
+    ![Unselected answer buttons](assets/images/readme-images/answer-buttons.png)<br>
+    ![Selected answer buttons with next button](assets/images/readme-images/selected-answer-buttons-w-next-button.png)<br>
 
 - **Final score**
-    -...
+    - After all questions have been answered, the users final score is displayed.
+    - For personalization, it is displayed next to the user's chosen username.<br>
+    ![Final score](assets/images/readme-images/score.png)<br>
 
 - **Play again or Home buttons**
-    -...
+    - Below the final score, two buttons appear: the "Play again" button, and the "Home" button.
+    - Clicking the play again button will redirect the user to the first question and the game will start anew.
+    - Clicking the home button will redirect the user to the home screen where a new user name can be chosen, or the rules read again.<br>
+    ![Play again and home buttons](assets/images/readme-images/playagain-and-homebutton.png)<br>
 
 - **Footer**
     - The footer contains a copyright symbol and the author's, ie my, name.
@@ -141,7 +155,9 @@ Should the user not get all questions right from the start, the site would like 
 
 ### Fixed Bugs
 
-- JavaScript elements not working because of elements with the same class name on different html-pages. Fixed - with the great help of my mentor, Spencer Barriball - by merging the two html-files into one.
+- JavaScript elements not working because of elements with the same class name (.btn) on different html-pages. Fixed - with the great help of my mentor, Spencer Barriball - by merging the two html-files into one.
+- When starting the game anew after having it played once already, by clicking the "Play again!" button, the "Home" button was still visible. Fixed by setting display of the home button to none in the respective function, resetState().
+- On mobile, when clicking "Next" after answering a question, the screenview stayed at the bottom of the page, where the Next button was. The user would like to see the next question though, ie the top of the screen. Fixed by introducing a command to scroll up into showQuestion().
 
 ### Unfixed Bugs
 
@@ -156,10 +172,13 @@ Should the user not get all questions right from the start, the site would like 
 - CSS ([Jigsaw](https://jigsaw.w3.org/css-validator/))
     - No error found.
 
+- JS ([JS Hint](https://jshint.com/))
+    - 1 error found: one unnecessary semicolon.
+    - Solution: deleted unnecessary semicolon.
+
 - Performance, Accessibility, Best Practices, SEO (Lighthouse Chrome Dev Tools)
-    - Accessibility is at 100, which is what the focus was one.
-Performance is mediocre, also after compressing images.
-    - ![Lighthouse rating](assets/images/readme-images/lighthouse-report_project-1.png)
+    - Accessibility is at a still high 94 due to some color contrasts not being as strong as they could be. After discussing with my group facilitator and mentor, it was decided to keep it as is.<br>
+    - ![Lighthouse rating](assets/images/readme-images/performance-lighthouse.png)<br>
 
 ### Browser Testing (section adapted from Kay Welfare, results are my own)
 
@@ -175,32 +194,35 @@ Performance is mediocre, also after compressing images.
 | Safari*     | only available to me on iPhone |
 | IE          |deprecated by Microsoft, not tested|
 
-*I asked my peers to review the site for me in Safari and one colleague came back with no bugs found (he made suggestions on styling which I did not implement since I considered them personal preference).
+*My mentor kindly reviewed the site for me in Safari on desktop.
 
 ### Manual Testing (section adapted from Kay Welfare, results are my own)
 
 | Feature     | Expect      | Action        | Result |
 | :---------: | :----------:| :-----------: | :-----:|
-| **Logo Icon**   | When clicked, home page will open   | Clicked Logo Icon  | Home page opened when clicked |
-| **Navbar Buttons**  | When clicked, the respective page will open  | Clicked all individual navbar buttons | All respective pages opened when button was clicked |
-| **Book A Session Now! Button** | When clicked, Contact page will open  | Clicked on the Book A Session Now! Button | Contact page opens |
-| **Email link on contact page** | When clicked, a blank email will open with the email address as the recipient | Click email link | New blank email opens with email address as recipient |
-| **Social link icons** | Social link icons open relevant websites in new tab when clicked | Click all individual icons | All respective sites open in new tab |
-| **Form submit button** | Form submits when submit button is clicked | Fill out form and click submit button | CI form dump page opens and displays form contents |
-| **Required form fields** | Form will not submit if required fields are blank and/or filled incorrectly, and fields will be highlighted and flagged | Fill out form incorrectly | Form does not submit and highlights incorrectly filled-in fields and gives prompts what may be wrong (eg @-sign missing in email address field) |
+| **Username input field**   | As a user, I can input my chosen user name   | Various usernames were put in  | Username inputs were accepted |
+| **Let's Start! Button w/o username filled in**  | When clicked, an error message will appear prompting the user to fill in a name  | Clicked Let's Start! without putting in a username | Error message appeared |
+| **Let's Start! Button with username filled in** | When clicked, the game will start  | Filled in a username and clicked "Let's start!" | Game starts |
+| **How to play Button** | When clicked, a modal will open with the rules | Click How to play | Modal containing the rules of the games opens |
+| **Rules modal and error message** | Rules/Error message will close when clicking the little X, or outside of the modal | Clicked X, and outside the modal | The modal closed |
+| **Answer buttons** | When clicked, receive feedback on whether answer was correct/incorrect | Clicked various answer buttons | Buttons highlight orange when hovered over. Upon clicking, buttons get disabled and the correct answer is highlighted green. Incorrect answer, if chosen, is highlighted red |
+| **Next button** | Take user to next question | Click the button | Next question is displayed. After the last question, final score is displayed. |
+| **Play again button** | Take user back to first question and reset the score | Click the button | First question is displayed. After answering all questions, new score is displayed. |
+| **Home button** | Take user back to the home page | Click the button | Home page is displayed. User can choose new username |
+| **LinkedIn icon in footer** | LinkedIn will open in a new tab | Click the icon | LinkedIn profile of the page's author opens in new tab |
 
 ### Testing User Stories (section adapted from Kay Welfare, results are my own)
 
 | Expectation                         | Result                          |
 | :---------------------------------: | :------------------------------:|
-| I want to confirm that Dr. Giri is a qualified psychotherapist | As a visitor, I can see that Dr. Giri is a psychotherapist on the home page, his full title is visible on the contact page |
-| I want to know which languages Dr. Giri speaks | As a visitor, I can find the languages which Dr. Giri offers sessions in on the about page |
-| I want to learn about the types of sessions Dr. Giri offers | As a visitor, I can find the types of sessions which Dr. Giri offers on the about page |
-| I want to know how much a session costs | As a visitor, I can find the costs of the various types of sessions on the about page |
-| I want to find out whether Dr. Giri specializes in the field which I struggle with | As a visitor, I can find the fields Dr. Giri specializes in on the about page |
-| I want to see where Dr. Giri is located | As a visitor, I can find Dr. Giri's practice's address on the contact page |
-| I want to be able to get in contact with Dr. Giri in the manner that I choose to. | As a visitor, I can choose to get in contact with Dr. Giri in the manner I prefer, whether this is to send an email, or call, or have Dr. Giri contact me |
-| I want to see a mobile friendly layout and responsive design | As a visitor, I have a good view of the site on mobile device without overflow or side-scrolling |
+| I want to know what this site offers at a glance. | As a visitor, I can see the header which tells me the topic of the site, and a message telling me that this is a game |
+| I want to see a responsive design which looks good on mobile devices as well as on larger screens. | As a visitor, I have a good view of the site on mobile device without overflow or side-scrolling |
+| I want to be guided through the site by an intuitive design, and not be distracted by unnecessary elements. | As a visitor, all options I can choose from, such as inputting a username, or learning the rules of the game, are displayed on one page |
+| I want to have a positive, joyful experience. | As a visitor, I am greeted by a joy- and colorful design which is consistent throughout the game |
+| I want to get feedback on my actions such as inputting a username or answering questions. | As a visitor, I get an error message if I forgot to put in a username. I also get color-coded feedback whether my chosen answer is correct or not |
+| I want to learn about Indian weddings. | As a visitor, I can take my time to read through the answers and learn about different functions of Indian weddings |
+| I want to see my final score. | As a visitor, I see my final score after answering all questions |
+| I want to be able to play again, or let a friend play on the same device after I am finished. | As a visitor, I can choose to play again after finishing the quiz, or choose a new username by going back to the home page |
 
 ## Deployment
 
@@ -230,3 +252,4 @@ This site was deployed on GitHub Pages:
 - Definition of Sangeet: https://events.restless.co.uk/event-calendar/sangeet-night/
 - Definition of Haldi: https://www.ruraltreasures.com/blogs/news/the-traditional-significance-of-haldi-ceremony
 - Show the top of the screen after clicking next: https://www.w3schools.com/jsref/met_win_scrollto.asp
+- Descriptions for JS functions: https://developer.wordpress.org/coding-standards/inline-documentation-standards/javascript/
