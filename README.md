@@ -197,10 +197,11 @@ Should the user not get all questions right from the start, the site would like 
 | Chrome      | ✔          | ✔             |
 | Edge        | ✔          | ✔             |
 | Firefox     | ✔          | ✔             |
-| Safari*     | ✔          | ✔             |
+| Safari*     | ✔          | ✔ (mostly)**    |
 | IE          |deprecated by Microsoft, not tested|
 
 *Only available to me on iPhone. My mentor kindly reviewed the site for me in Safari on desktop.
+**On mobile, modals (error message or rules) can only be closed by clicking on the little X, not by clicking on the screen outside the modal. As there are two options for the same result, and one works completely fine, it was deemed acceptable.
 
 ### Manual Testing (section adapted from Kay Welfare, results are my own)
 
