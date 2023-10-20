@@ -21,7 +21,7 @@ The site was created with persons in mind who have not had any point of contact 
 
 ### Wireframes
 
-The wireframes were made in Figma. A mockup of a mobile screen was chosen since the site was built using the mobile-first approach. The wireframes were kept very simple and the focus was on structure rather than design. The wireframes also include a countdown field which was not implemented in the basic version of the game. It is a possible future feature.
+The wireframes were made in Figma. A mockup of a mobile screen was chosen since the site was built using the mobile-first approach. The wireframes were kept very simple and the focus was on structure rather than design. The wireframes also include a countdown field which was not implemented in the basic version of the game. Also, at this point no personalized message is included when the score is displayed. Both are possible future features.
 
 ![Wireframes for mobile](assets/images/readme-images/wireframes_indian_wedding.png) <br>
 
@@ -118,6 +118,12 @@ The site has the basic features of a static website as well as some interactive 
     - In order to show the user how many questions are remaining in the game, a progress bar could be introduced.
     - With each question answered, the progress bar would fill up until it was full after answering the last question.
     - This would give the user a better feeling of how much time the game needs, and motivate users to play until the end.
+
+- Display a personalized message depending on the score
+
+    - After answering all questions, the score is displayed
+    - Along with the score, there could be a message giving the user more feedback on how they did
+    - Low scores would get more words of encouragement, while higher scores would get more words of praise
 
 ## UX
 
