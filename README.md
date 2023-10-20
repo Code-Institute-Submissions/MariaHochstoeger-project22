@@ -197,7 +197,7 @@ Should the user not get all questions right from the start, the site would like 
 | Chrome      | ✔          | ✔             |
 | Edge        | ✔          | ✔             |
 | Firefox     | ✔          | ✔             |
-| Safari*     | ✔          | ✔ (mostly)**  |
+| Safari*     | ✔          | ✔**           |
 | IE          |deprecated by Microsoft, not tested|
 
 *Only available to me on iPhone. My mentor kindly reviewed the site for me in Safari on desktop.<br>
