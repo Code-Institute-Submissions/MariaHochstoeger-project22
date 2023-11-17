@@ -70,6 +70,12 @@ The site has the basic features of a static website as well as some interactive 
     - Upon clicking the button, the username input gets validated and - if successful - the game starts.<br>
     ![Username input field and start and rules buttons](assets/images/readme-images/user-input-field.png)<br>
 
+- **Timer**
+    - Upon starting the first question, the timer begins counting down from 30 seconds.
+    - The timer stops when an answer is selected.
+    - If no answer is selected within 30 seconds, the answer buttons get disabled and the countdown shows "Time over".<br>
+    ![Timer](assets/images/readme-images/timer.png)<br>
+
 - **Question field**
     - In the question field, a number appears. Currently, it starts with "1." and goes up to "5."
     - Next to the number, the current question is displayed.<br>
