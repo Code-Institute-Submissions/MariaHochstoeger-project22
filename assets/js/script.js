@@ -1,5 +1,4 @@
 // Variables in the global space
-// This is MY code
 const usernameField = document.getElementById("input-name");
 const startButton = document.getElementById("lets-start");
 const questionElement = document.getElementById("question-field");
@@ -22,7 +21,7 @@ let username = "";
 
 // Questions
 // Inspiration from: https://github.com/anjalee-kulasinghe/portfolio-project2-quiz-saga/blob/main/assets/js/game.js
-// Questions are my own
+// Questions are MY own
 const questions = [
     { 
         question: "What is the Haldi ceremony?",
@@ -81,39 +80,41 @@ const questions = [
 // Add event listener to Start Button; Inspiration from: https://github.com/raccodes09/ci-pp2-project/blob/main/assets/js/script.js
 startButton.addEventListener("click", validateUsernameAndStart); 
 
-// Rules modal to display when "How to Play"-button is clicked
 // This is MY code
+// Rules modal to display when "How to Play"-button is clicked
 rulesButton.addEventListener("click", () => { 
     rulesModal.style.display = "block";
 });
 
-// Rules modal to close when "X" is clicked
 // This is MY code
+// Rules modal to close when "X" is clicked
 closeModal.addEventListener("click", () => { 
     rulesModal.style.display = "none";
 });
 
-// Rules modal to close when anywhere outside the modal is clicked
 // This is MY code
+// Rules modal to close when anywhere outside the modal is clicked
 window.addEventListener ("click", (event) => { 
     if (event.target === rulesModal) {
         rulesModal.style.display = "none";
     }
 });
 
-// Error message to close when "X" is clicked
 // This is MY code
+// Error message to close when "X" is clicked
 closeError.addEventListener("click", () => { 
     errorMessage.style.display = "none";
 });
 
-// Error message to close when anywhere outside the error message is clicked
 // This is MY code
+// Error message to close when anywhere outside the error message is clicked
 window.addEventListener ("click", (event) => { 
     if (event.target === errorMessage) {
         errorMessage.style.display = "none";
     }
 });
+
+// ALL DOCSTRINGS IN THIS FILE ARE MY OWN INDICATING UNDERSTANDING OF THE CODE AFTER HAVING WORKED THROUGH IT MULTIPLE TIMES AND IN VARIOUS WAYS
 
 /* 
 If the next button is clicked and there are questions left which have not yet been shown, then question to display
@@ -131,8 +132,8 @@ nextButton.addEventListener("click", () => {
     }
 });
 
-// Go to home screen when home button is clicked
 // This is MY code
+// Go to home screen when home button is clicked
 homeButton.addEventListener("click", () => {
     window.location.reload();
 });
@@ -141,6 +142,7 @@ homeButton.addEventListener("click", () => {
 
 // Functions
 
+// This is MY code
 /**
  * Take username input and check whether it is correct.
  * If correct, call startQuiz() and hide welcomeContainer
@@ -156,6 +158,7 @@ function validateUsernameAndStart() { // Validate that username is not blank and
     }
 }
 
+// Help from: https://www.youtube.com/watch?v=PBcqGxrr9g8&t=118s
 /**
  * Reset currentQuestionIndex and score to 0.
  * Show "Next" in next button.
@@ -168,57 +171,77 @@ function startQuiz() {
     showQuestion();
 }
 
+// Code from the tutorial was changed, and additional functions added, to make functions more atomic
+
+// Inspiration from: https://www.youtube.com/watch?v=PBcqGxrr9g8&t=118s
 /**
- * Call resetState() and bring user up to beginning of screen.
+ * Call resetState() and empty the screen of any previously displayed question.
+ * Bring user up to beginning of screen by calling scrollToTop().
  * Take currentQuestion and questionNo and display a numbered question.
- * Take currentQuestion.answers and create individual answer buttons for each possible answer. Add class "btn" to each button.
- * Add event listener to each newly created button and upon clicking, call selectAnswer()
+ * Call createAnswerButtons().
  */
 function showQuestion() {
     resetState();
-
-    // Make sure the question is visible for smaller screens; otherwise, the screen shows from the bottom
-    window.scrollTo(0, 0); 
+    scrollToTop();
 
     const currentQuestion = questions[currentQuestionIndex];
     const questionNo = currentQuestionIndex + 1; 
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+    questionElement.innerHTML = `${questionNo}. ${currentQuestion.question}`; // Use string literals to display the question
 
-    currentQuestion.answers.forEach((answer) => { 
-        const button = document.createElement("button");
-        button.innerHTML = answer.text;
-        button.classList.add("btn");
+    createAnswerButtons(currentQuestion.answers); // Pass the answer options of the current question into the newly created answer buttons
+}
+
+// This is MY code
+/**
+ * Bring user up to the top of the screen to see the displayed question immediately
+ */
+function scrollToTop() {
+    window.scrollTo(0, 0);
+}
+
+// This function was created by me, inspiration from: https://www.youtube.com/watch?v=PBcqGxrr9g8&t=118s
+/**
+ * Creates buttons for each individual possible answer to a question and displays them on the screen
+ * @param {Array} answers - the answers are displayed in an array and contain text and whether the answer is correct or false
+ */
+function createAnswerButtons(answers) {
+    answers.forEach((answer) => {
+        const button = createButton(answer.text, answer.correct);
         answerButtons.appendChild(button);
-
-        if(answer.correct) {
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener("click", selectAnswer);
     });
 }
 
+// This function was created by me, inspiration from: https://www.youtube.com/watch?v=PBcqGxrr9g8&t=118s
 /**
- * Hide next button
- * Remove all previously displayed answer possibilities
- * Hide home button
+ * Creates a button and sets the inside to a text containing a possible answer
+ * Adds a class "btn" to the button
+ * @param {string} text         - The answer which is displayed on the button
+ * @param {boolean} isCorrect   - Whether this particular answer is correct or not
+ * @returns {HTMLElement}       - The newly created button
  */
-function resetState() { 
-    nextButton.style.display = "none";
-    while (answerButtons.firstChild) {
-        answerButtons.removeChild(answerButtons.firstChild);
+function createButton(text, isCorrect) {
+    const button = document.createElement("button");
+    button.innerHTML = text;
+    button.classList.add("btn");
+    if (isCorrect) {
+        button.dataset.correct = isCorrect;
     }
-    homeButton.style.display = "none";
+    button.addEventListener("click", selectAnswer);
+    return button;
 }
 
+// This function was adapted by me, inspiration from: https://www.youtube.com/watch?v=PBcqGxrr9g8&t=118s
 /**
-* Add class correct/incorrect to answer buttons to apply styling and increment correct score.
-* Take answerButtons.children and create array out of answer buttons.
-* If selected answer was wrong, highlight the correct answer green by adding .correct class. Disable other buttons after answer was chosen.
-* Display next button.
-*/
-function selectAnswer(e){ 
-    const selectedBtn = e.target;
+ * Adds a class "correct" or "incorrect" to an answer-button
+ * After selecting an answer, colors the selected answer red (incorrect) or green (correct)
+ * Colors the correct answer green
+ * Shows the Next button
+ * @param {Event} event - The click event
+ */
+function selectAnswer(event) {
+    const selectedBtn = event.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
+
     if (isCorrect) {
         selectedBtn.classList.add("correct");
         score++;
@@ -226,15 +249,39 @@ function selectAnswer(e){
         selectedBtn.classList.add("incorrect");
     }
 
-    // Help from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from?retiredLocale=de
-    Array.from(answerButtons.children).forEach((button) => { 
+    disableButtonsAndHighlightCorrect();
+    showNextButton();
+}
+
+// This function was created by me, inspiration from: https://www.youtube.com/watch?v=PBcqGxrr9g8&t=118s
+/**
+ * After selecting an answer, all buttons are disabled and colors indicate whether chosen answer was correct
+ */
+function disableButtonsAndHighlightCorrect() {
+    Array.from(answerButtons.children).forEach((button) => {
         if (button.dataset.correct === "true") {
             button.classList.add("correct");
         }
         button.disabled = true;
     });
+}
 
-    nextButton.style.display = "block";  // Display Next button after question is answered
+// This function was created by me, inspiration from: https://www.youtube.com/watch?v=PBcqGxrr9g8&t=118s
+/**
+ * Display the Next button
+ */
+function showNextButton() {
+    nextButton.style.display = "block";
+}
+
+// This function is from: https://www.youtube.com/watch?v=PBcqGxrr9g8&t=118s
+/**
+ * Clear the UI from the previous question
+ */
+function resetState() { 
+    nextButton.style.display = "none";
+    answerButtons.innerHTML = "";
+    homeButton.style.display = "none";
 }
 
 /**
