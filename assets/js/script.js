@@ -201,7 +201,7 @@ function startTimer() {
  * When time runs out and no answer was selected, buttons are disabled and correct answer is shown
  */
 function onTimeOut() {
-    timerField.innerHTML = `Time Over!`;
+    timerField.innerHTML = `Time Over!`; // Display "Time Over!" when time has run out
     disableButtonsAndHighlightCorrect();
     showNextButton();
 }
@@ -226,7 +226,7 @@ function showQuestion() {
 
     const currentQuestion = questions[currentQuestionIndex];
     const questionNo = currentQuestionIndex + 1; 
-    questionElement.innerHTML = `${questionNo}. ${currentQuestion.question}`; // Use string literals to display the question
+    questionElement.innerHTML = `${questionNo}. ${currentQuestion.question}`; // Using string literals to display the question
 
     createAnswerButtons(currentQuestion.answers); // Pass the answer options of the current question into the newly created answer buttons
 
@@ -238,7 +238,7 @@ function showQuestion() {
  * Bring user up to the top of the screen to see the displayed question immediately
  */
 function scrollToTop() {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0); // Scroll to top of the window so that users on smaller screens see the question first
 }
 
 // This function was created by me, inspiration from: https://www.youtube.com/watch?v=PBcqGxrr9g8&t=118s
@@ -294,7 +294,7 @@ function selectAnswer(event) {
 
     clearInterval(timer); // stop the timer, this is MY code
 
-    disableButtonsAndHighlightCorrect();
+    disableButtonsAndHighlightCorrect(); // disable the buttons once an answer is selected
     showNextButton();
 }
 
@@ -305,7 +305,7 @@ function selectAnswer(event) {
 function disableButtonsAndHighlightCorrect() {
     Array.from(answerButtons.children).forEach((button) => {
         if (button.dataset.correct === "true") {
-            button.classList.add("correct");
+            button.classList.add("correct"); // add class "correct" to the button with the correct answer
         }
         button.disabled = true;
     });
@@ -329,6 +329,7 @@ function resetState() {
     homeButton.style.display = "none";
 }
 
+// This function was adapted by me, inspiration from: https://www.youtube.com/watch?v=PBcqGxrr9g8&t=118s
 /**
  * Call resetState().
  * Show the score, display next button with inner HTML "Play again".
@@ -336,10 +337,10 @@ function resetState() {
  */
 function showScore() {
     resetState();
-    questionElement.innerHTML = `${username}, you scored ${score} out of ${questions.length}!`;
+    questionElement.innerHTML = `${username}, you scored ${score} out of ${questions.length}!`; 
     nextButton.innerHTML = "Play again";
     nextButton.style.display = "block";
-    homeButton.innerHTML = "Home";
-    homeButton.style.display = "block";
-    timerField.style.display = "none";
+    homeButton.innerHTML = "Home"; 
+    homeButton.style.display = "block"; // Display Home button
+    timerField.style.display = "none"; // Hide timer
 }

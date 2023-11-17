@@ -199,7 +199,7 @@ Should the user not get all questions right from the start, the site would like 
 | Safari*     | ✔          | ✔**           |
 | IE          |deprecated by Microsoft, not tested|
 
-The timer seems to start with a slight delay. In order to optimize the timer's start, the respective function was placed far up in the code to prevent as much as possible that other code is executed before it. Since the slight delay only means that on the one hand, the user has a bit more time, and on the other hand, the user's attention gets drawn to the time-pressure more, it was deemed acceptable.
+The timer seems to start with a slight delay. In order to optimize the timer's start, the respective function was placed far up in the code to prevent as much as possible that other code is executed before it. Since the slight delay only means that on the one hand, the user gets a bit more time, and on the other hand, the user's attention gets drawn to the time-pressure more, it was deemed acceptable. Also, the lighthouse report revealed a performance rating of 99.
 
 *Only available to me on iPhone. My mentor kindly reviewed the site for me in Safari on desktop.<br>
 **On mobile (which I reviewed), modals (error message or rules) can only be closed by clicking on the little X, not by clicking on the screen outside the modal. As there are two options for the same result, and one works completely fine, it was deemed acceptable.
