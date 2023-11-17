@@ -1,4 +1,5 @@
 // Variables in the global space
+// This is MY code
 const usernameField = document.getElementById("input-name");
 const startButton = document.getElementById("lets-start");
 const questionElement = document.getElementById("question-field");
@@ -13,13 +14,15 @@ const welcomeContainer = document.getElementById("container");
 const homeButton = document.getElementById("home-button");
 
 // Ensure home button is not displayed
-homeButton.style.display = "none";
+homeButton.style.display = "none"; // This is MY code
 
 let currentQuestionIndex = 0;
 let score = 0;
 let username = "";
 
 // Questions
+// Inspiration from: https://github.com/anjalee-kulasinghe/portfolio-project2-quiz-saga/blob/main/assets/js/game.js
+// Questions are my own
 const questions = [
     { 
         question: "What is the Haldi ceremony?",
@@ -79,16 +82,19 @@ const questions = [
 startButton.addEventListener("click", validateUsernameAndStart); 
 
 // Rules modal to display when "How to Play"-button is clicked
+// This is MY code
 rulesButton.addEventListener("click", () => { 
     rulesModal.style.display = "block";
 });
 
 // Rules modal to close when "X" is clicked
+// This is MY code
 closeModal.addEventListener("click", () => { 
     rulesModal.style.display = "none";
 });
 
 // Rules modal to close when anywhere outside the modal is clicked
+// This is MY code
 window.addEventListener ("click", (event) => { 
     if (event.target === rulesModal) {
         rulesModal.style.display = "none";
@@ -96,11 +102,13 @@ window.addEventListener ("click", (event) => {
 });
 
 // Error message to close when "X" is clicked
+// This is MY code
 closeError.addEventListener("click", () => { 
     errorMessage.style.display = "none";
 });
 
 // Error message to close when anywhere outside the error message is clicked
+// This is MY code
 window.addEventListener ("click", (event) => { 
     if (event.target === errorMessage) {
         errorMessage.style.display = "none";
@@ -124,6 +132,7 @@ nextButton.addEventListener("click", () => {
 });
 
 // Go to home screen when home button is clicked
+// This is MY code
 homeButton.addEventListener("click", () => {
     window.location.reload();
 });
