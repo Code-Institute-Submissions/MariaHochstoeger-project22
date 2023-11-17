@@ -75,6 +75,7 @@ The site has the basic features of a static website as well as some interactive 
     - The timer stops when an answer is selected.
     - If no answer is selected within 30 seconds, the answer buttons get disabled and the countdown shows "Time over".<br>
     ![Timer](assets/images/readme-images/timer.png)<br>
+    ![Time over](assets/images/readme-images/timer-over.png)<br>
 
 - **Question field**
     - In the question field, a number appears. Currently, it starts with "1." and goes up to "5."
@@ -109,15 +110,6 @@ The site has the basic features of a static website as well as some interactive 
     ![Footer](assets/images/readme-images/footer.png)
 
 ### Possible Future Features
-
-- Include a timer
-
-    - In the future, a timer could be included in order to make the game more fast-paced and exciting.
-    - Upon clicking "Let's Start", or "Next", a timer of e.g. 30 seconds could start running.
-    - The timer is reset for each question.
-    - If the user answers within the 30 seconds, the timer stops and only starts running again at the next question.
-    - If the time has expired without the user giving an answer, the answer buttons would get disabled and the next button would appear.
-    - The respective question would be counted as incorrect.
 
 - Include a progress bar
 
@@ -161,6 +153,7 @@ Should the user not get all questions right from the start, the site would like 
 - I confirmed that this project is responsive and looks good on various common screen sizes by using the devtools devices toolbar.
 - I have confirmed that the username input validation works. There is an error message if the field is not filled out correctly.
 - I checked that the modal opens upon clicking "How to Play" and can be closed by either clicking the little X, or anywhere on the page outside the modal.
+- I ensured that the timer works correctly, starting at 30 seconds for each new question and stoping once an answer is selected.
 - I made sure that the answer buttons give a correct colour-coded feedback upon selecting and clicking on an answer: red for incorrect, green for correct.
 - I ensured that the "Play again" button takes the user to the start of the quiz, while the "Home" button takes the user to the start page.
 - I confirmed that header and footer are easily readable and understandable.
@@ -205,6 +198,8 @@ Should the user not get all questions right from the start, the site would like 
 | Firefox     | ✔          | ✔             |
 | Safari*     | ✔          | ✔**           |
 | IE          |deprecated by Microsoft, not tested|
+
+The timer seems to start with a slight delay. In order to optimize the timer's start, the respective function was placed far up in the code to prevent as much as possible that other code is executed before it. Since the slight delay only means that on the one hand, the user has a bit more time, and on the other hand, the user's attention gets drawn to the time-pressure more, it was deemed acceptable.
 
 *Only available to me on iPhone. My mentor kindly reviewed the site for me in Safari on desktop.<br>
 **On mobile (which I reviewed), modals (error message or rules) can only be closed by clicking on the little X, not by clicking on the screen outside the modal. As there are two options for the same result, and one works completely fine, it was deemed acceptable.
