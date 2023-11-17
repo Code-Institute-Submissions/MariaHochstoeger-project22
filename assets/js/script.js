@@ -11,13 +11,15 @@ const rulesModal = document.getElementById("rules-modal");
 const closeModal = document.getElementById("close-modal");
 const welcomeContainer = document.getElementById("container");
 const homeButton = document.getElementById("home-button");
+const timerField = document.getElementById("timer");
 
 // Ensure home button is not displayed
 homeButton.style.display = "none"; // This is MY code
 
-let currentQuestionIndex = 0;
-let score = 0;
-let username = "";
+let currentQuestionIndex = 0; // Taken from: https://www.youtube.com/watch?v=PBcqGxrr9g8&t=118s
+let score = 0; // Taken from: https://www.youtube.com/watch?v=PBcqGxrr9g8&t=118s
+let username = ""; // Taken from: https://www.youtube.com/watch?v=PBcqGxrr9g8&t=118s
+let timer; // This is MY code
 
 // Questions
 // Inspiration from: https://github.com/anjalee-kulasinghe/portfolio-project2-quiz-saga/blob/main/assets/js/game.js
@@ -171,6 +173,35 @@ function startQuiz() {
     showQuestion();
 }
 
+// This is MY code
+/**
+ * Resets the timer and starts a countdown of 30 seconds
+ */
+function startTimer() {
+    let timeLeft = 30; // Timer display starts at 30 seconds
+
+    clearInterval(timer); // Clears the timer
+
+    timer = setInterval(() => {
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            onTimeOut();
+        } else {
+            timerField.innerHTML = timeLeft;
+            timeLeft--;
+        }
+    }, 1000);     
+}
+
+// This is MY code
+/**
+ * When time runs out and no answer was selected, buttons are disabled and correct answer is shown
+ */
+function onTimeOut() {
+    disableButtonsAndHighlightCorrect();
+    showNextButton();
+}
+
 // Code from the tutorial was changed, and additional functions added, to make functions more atomic
 
 // Inspiration from: https://www.youtube.com/watch?v=PBcqGxrr9g8&t=118s
@@ -184,11 +215,18 @@ function showQuestion() {
     resetState();
     scrollToTop();
 
+    // This is MY code
+    if (currentQuestionIndex === 0) {
+        welcomeContainer.style.display = "none"; // Hides the welcome container on the first question
+    }
+
     const currentQuestion = questions[currentQuestionIndex];
     const questionNo = currentQuestionIndex + 1; 
     questionElement.innerHTML = `${questionNo}. ${currentQuestion.question}`; // Use string literals to display the question
 
     createAnswerButtons(currentQuestion.answers); // Pass the answer options of the current question into the newly created answer buttons
+
+    startTimer(); // Start the timer
 }
 
 // This is MY code
@@ -229,6 +267,7 @@ function createButton(text, isCorrect) {
     button.addEventListener("click", selectAnswer);
     return button;
 }
+
 
 // This function was adapted by me, inspiration from: https://www.youtube.com/watch?v=PBcqGxrr9g8&t=118s
 /**

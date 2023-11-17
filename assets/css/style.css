@@ -183,6 +183,11 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
     cursor: pointer;
 }
 
+#timer {
+    color:#00d0ff;
+    font-size: large;
+}
+
 #question-field {
     color:#fa00a6;
     font-size: 1.5em;
