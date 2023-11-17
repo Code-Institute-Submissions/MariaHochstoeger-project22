@@ -153,6 +153,8 @@ homeButton.addEventListener("click", () => {
 function validateUsernameAndStart() { // Validate that username is not blank and redirect to game page;for trim: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim?retiredLocale=de
     username = usernameField.value.trim();
     if (username !== "") {
+        timerField.style.display = "block"; // Display timer as quickly as possible after username is validated
+        startTimer(); // Start the timer
         startQuiz();
         welcomeContainer.style.display = "none";
     } else {
@@ -170,6 +172,7 @@ function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
     nextButton.innerHTML = "Next";
+    timerField.style.display = "block"; // Ensure timer is displayed when playing another round, ie not the first one
     showQuestion();
 }
 
@@ -185,11 +188,9 @@ function startTimer() {
     timer = setInterval(() => { // setInterval function: https://www.w3schools.com/jsref/met_win_setinterval.asp
         if (timeLeft <= 0) {
             clearInterval(timer);
-            timeLeft = 0; // ensure time displays as 0 when countdown is over
-            timerField.innerHTML = `Time Left: ${timeLeft}`;
             onTimeOut();
         } else {
-            timerField.innerHTML = `Time Left: ${timeLeft}`;
+            timerField.innerHTML = `Time Left: ${timeLeft} seconds`;
             timeLeft--;
         }
     }, 1000);     
@@ -291,6 +292,8 @@ function selectAnswer(event) {
         selectedBtn.classList.add("incorrect");
     }
 
+    clearInterval(timer); // stop the timer, this is MY code
+
     disableButtonsAndHighlightCorrect();
     showNextButton();
 }
@@ -338,4 +341,5 @@ function showScore() {
     nextButton.style.display = "block";
     homeButton.innerHTML = "Home";
     homeButton.style.display = "block";
+    timerField.style.display = "none";
 }
