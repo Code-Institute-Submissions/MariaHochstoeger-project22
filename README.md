@@ -140,6 +140,7 @@ Should the user not get all questions right from the start, the site would like 
 - I want to have a positive, joyful experience.
 - I want to get feedback on my actions such as inputting a username or answering questions.
 - I want to learn about Indian weddings.
+- I want to see how much time is left for answering a question.
 - I want to see my final score.
 - I want to be able to play again, or let a friend play on the same device after I am finished.
 
@@ -213,6 +214,8 @@ The timer seems to start with a slight delay. In order to optimize the timer's s
 | **Let's Start! Button with username filled in** | When clicked, the game will start  | Filled in a username and clicked "Let's start!" | Game starts |
 | **How to play Button** | When clicked, a modal will open with the rules | Click How to play | Modal containing the rules of the game opens |
 | **Rules modal and error message** | Rules/Error message will close when clicking the little X, or outside of the modal | Clicked X, and outside the modal | The modal closed |
+| **Timer - select answer** | Timer will countdown the seconds. Upon selection of an answer, the timer stops | Selected an answer within the 30 seconds countdown | Timer stopped |
+| **Timer - not select answer** | Timer will countdown the seconds. Upon expiry of the time, answer options get disabled | Let the countdown run out | Answer options got disabled |
 | **Answer buttons** | When clicked, receive feedback on whether answer was correct/incorrect | Clicked various answer buttons | Buttons highlight orange when hovered over. Upon clicking, buttons get disabled and the correct answer is highlighted green. Incorrect answer, if chosen, is highlighted red |
 | **Next button** | Take user to next question | Click the button | Next question is displayed. After the last question, final score is displayed. |
 | **Play again button** | Take user back to first question and reset the score | Click the button | First question is displayed. After answering all questions, new score is displayed. |
@@ -229,6 +232,7 @@ The timer seems to start with a slight delay. In order to optimize the timer's s
 | I want to have a positive, joyful experience. | As a visitor, I am greeted by a joy- and colorful design which is consistent throughout the game |
 | I want to get feedback on my actions such as inputting a username or answering questions. | As a visitor, I get an error message if I forgot to put in a username. I also get color-coded feedback whether my chosen answer is correct or not |
 | I want to learn about Indian weddings. | As a visitor, I can take my time to read through the answers and learn about different functions of Indian weddings |
+| I want to see how much time is left for answering a question. | As a visitor, I see a countdown showing the seconds left for answering a question. |
 | I want to see my final score. | As a visitor, I see my final score after answering all questions |
 | I want to be able to play again, or let a friend play on the same device after I am finished. | As a visitor, I can choose to play again after finishing the quiz, or choose a new username by going back to the home page |
 
