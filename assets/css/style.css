@@ -184,8 +184,10 @@ credits: https://www.w3schools.com/howto/howto_css_placeholder.asp */
 }
 
 #timer {
-    color:#00d0ff;
-    font-size: large;
+    color:#015d45;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 1em;
 }
 
 #question-field {

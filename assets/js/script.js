@@ -182,12 +182,14 @@ function startTimer() {
 
     clearInterval(timer); // Clears the timer
 
-    timer = setInterval(() => {
+    timer = setInterval(() => { // setInterval function: https://www.w3schools.com/jsref/met_win_setinterval.asp
         if (timeLeft <= 0) {
             clearInterval(timer);
+            timeLeft = 0; // ensure time displays as 0 when countdown is over
+            timerField.innerHTML = `Time Left: ${timeLeft}`;
             onTimeOut();
         } else {
-            timerField.innerHTML = timeLeft;
+            timerField.innerHTML = `Time Left: ${timeLeft}`;
             timeLeft--;
         }
     }, 1000);     
@@ -198,6 +200,7 @@ function startTimer() {
  * When time runs out and no answer was selected, buttons are disabled and correct answer is shown
  */
 function onTimeOut() {
+    timerField.innerHTML = `Time Over!`;
     disableButtonsAndHighlightCorrect();
     showNextButton();
 }
