@@ -21,7 +21,7 @@ The site was created with persons in mind who have not had any point of contact 
 
 ### Wireframes
 
-The wireframes were made in Figma. A mockup of a mobile screen was chosen since the site was built using the mobile-first approach. The wireframes were kept very simple and the focus was on structure rather than design. The wireframes also include a countdown field which was not implemented in the basic version of the game. Also, at this point no personalized message is included when the score is displayed. Both are possible future features.
+The wireframes were made in Figma. A mockup of a mobile screen was chosen since the site was built using the mobile-first approach. The wireframes were kept very simple and the focus was on structure rather than design. In the implementation stage, the countdown field was moved upwards to draw the user's attention to it more. Also, at this point no personalized message is included when the score is displayed. It is a possible future feature.
 
 ![Wireframes for mobile](assets/images/readme-images/wireframes_indian_wedding.png) <br>
 
